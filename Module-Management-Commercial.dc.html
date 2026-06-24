@@ -743,7 +743,9 @@ class Component extends DCLogic {
   save() {
     try {
       const s = this.state;
-      localStorage.setItem(this.KEY, JSON.stringify({ methodeRead:s.methodeRead, answers:s.answers, checked:s.checked, exercises:s.exercises, examReveal:s.examReveal, checklist:s.checklist }));
+      const payload = { methodeRead:s.methodeRead, answers:s.answers, checked:s.checked, exercises:s.exercises, examReveal:s.examReveal, checklist:s.checklist };
+      localStorage.setItem(this.KEY, JSON.stringify(payload));
+      if (window.MajubahSync) window.MajubahSync.push(payload);
     } catch(e) {}
   }
   patch(updater) { this.setState(updater, () => this.save()); }
@@ -930,6 +932,112 @@ class Component extends DCLogic {
     });
   }
 }
+</script>
+
+<!-- ESPACE APPRENANT : connexion prénom + code + synchronisation Supabase -->
+<script>
+(function () {
+  var SB_URL = 'https://jvokltvsmsucgpzjbyli.supabase.co';
+  var SB_KEY = 'sb_publishable_1bGhtSLy3tcF50HDXMTU-w_kg3b8IIK';
+  var STORE_KEY = 'majubah-campus:bachelor-management-commercial';
+  var SESSION_KEY = 'majubah_session';
+
+  function rpc(fn, body) {
+    return fetch(SB_URL + '/rest/v1/rpc/' + fn, {
+      method: 'POST',
+      headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+  }
+
+  function getSession() { try { return JSON.parse(localStorage.getItem(SESSION_KEY)); } catch (e) { return null; } }
+  function setSession(s) { localStorage.setItem(SESSION_KEY, JSON.stringify(s)); }
+  function clearSession() { localStorage.removeItem(SESSION_KEY); }
+
+  var pushTimer = null;
+  window.MajubahSync = {
+    push: function (payload) {
+      var s = getSession(); if (!s) return;
+      clearTimeout(pushTimer);
+      pushTimer = setTimeout(function () {
+        rpc('sauver_progression', { p_prenom: s.prenom, p_code: s.code, p_data: payload });
+      }, 800);
+    },
+    logout: function () { clearSession(); sessionStorage.removeItem('majubah_synced'); location.reload(); }
+  };
+
+  function overlay(html) {
+    var o = document.getElementById('majubah-auth');
+    if (!o) { o = document.createElement('div'); o.id = 'majubah-auth'; document.body.appendChild(o); }
+    o.setAttribute('style', 'position:fixed; inset:0; z-index:99999; background:#fff; display:flex; align-items:center; justify-content:center; font-family:system-ui,-apple-system,sans-serif; padding:20px;');
+    o.innerHTML = html;
+    return o;
+  }
+  function removeOverlay() { var o = document.getElementById('majubah-auth'); if (o) o.remove(); }
+
+  function showChip(prenom) {
+    if (document.getElementById('mj-chip')) return;
+    var c = document.createElement('div');
+    c.id = 'mj-chip';
+    c.setAttribute('style', 'position:fixed; bottom:14px; right:14px; z-index:9000; background:#fff; border:1px solid #d8dee1; border-radius:999px; padding:7px 14px; font-family:system-ui,sans-serif; font-size:13px; color:#243840; box-shadow:0 2px 10px rgba(0,0,0,.10); display:flex; gap:12px; align-items:center;');
+    var span = document.createElement('span'); span.textContent = '👤 ' + prenom;
+    var a = document.createElement('a'); a.href = '#'; a.textContent = 'Déconnexion';
+    a.setAttribute('style', 'color:#e0533c; font-weight:600; text-decoration:none;');
+    a.addEventListener('click', function (e) { e.preventDefault(); window.MajubahSync.logout(); });
+    c.appendChild(span); c.appendChild(a); document.body.appendChild(c);
+  }
+
+  function showLogin(msg) {
+    var o = overlay(
+      '<div style="max-width:350px; width:100%; text-align:center;">'
+      + '<div style="font-family:var(--font-display,serif); font-weight:700; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#e0533c; margin-bottom:8px;">Majubah Campus</div>'
+      + '<h2 style="font-family:var(--font-display,serif); color:#243840; margin:0 0 6px; font-size:26px;">Espace apprenant</h2>'
+      + '<p style="color:#5b6a70; font-size:14px; margin:0 0 22px;">Connecte-toi pour retrouver ta progression sur tous tes appareils.</p>'
+      + '<input id="mj-prenom" placeholder="Prénom" autocomplete="off" style="width:100%; box-sizing:border-box; padding:13px 14px; margin-bottom:10px; border:1px solid #d8dee1; border-radius:10px; font-size:15px;">'
+      + '<input id="mj-code" placeholder="Code" type="password" style="width:100%; box-sizing:border-box; padding:13px 14px; margin-bottom:4px; border:1px solid #d8dee1; border-radius:10px; font-size:15px;">'
+      + '<p id="mj-msg" style="color:#e0533c; font-size:13px; min-height:18px; margin:8px 0 12px;">' + (msg || '') + '</p>'
+      + '<button id="mj-go" style="width:100%; padding:13px; background:#e0533c; color:#fff; border:none; border-radius:999px; font-weight:700; font-size:15px; cursor:pointer;">Se connecter</button>'
+      + '<p style="color:#9aa7ac; font-size:12px; margin-top:16px;">Codes fournis par ton formateur.</p>'
+      + '</div>'
+    );
+    var go = document.getElementById('mj-go');
+    function submit() {
+      var prenom = document.getElementById('mj-prenom').value.trim();
+      var code = document.getElementById('mj-code').value;
+      var msgEl = document.getElementById('mj-msg');
+      if (!prenom || !code) { msgEl.textContent = 'Entre ton prénom et ton code.'; return; }
+      go.textContent = 'Connexion…'; go.disabled = true;
+      rpc('connexion', { p_prenom: prenom, p_code: code }).then(function (id) {
+        if (!id) { go.textContent = 'Se connecter'; go.disabled = false; msgEl.textContent = 'Prénom ou code incorrect.'; return; }
+        setSession({ prenom: prenom, code: code });
+        rpc('charger_progression', { p_prenom: prenom, p_code: code }).then(function (data) {
+          if (data && typeof data === 'object') localStorage.setItem(STORE_KEY, JSON.stringify(data));
+          sessionStorage.setItem('majubah_synced', '1');
+          location.reload();
+        });
+      });
+    }
+    go.addEventListener('click', submit);
+    o.addEventListener('keydown', function (e) { if (e.key === 'Enter') submit(); });
+    var p = document.getElementById('mj-prenom'); if (p) p.focus();
+  }
+
+  function boot() {
+    var s = getSession();
+    if (!s) { showLogin(''); return; }
+    if (sessionStorage.getItem('majubah_synced')) { removeOverlay(); showChip(s.prenom); return; }
+    overlay('<p style="color:#5b6a70; font-family:system-ui,sans-serif;">Chargement de ta progression…</p>');
+    rpc('charger_progression', { p_prenom: s.prenom, p_code: s.code }).then(function (data) {
+      if (data === null) { clearSession(); showLogin('Ta session a expiré, reconnecte-toi.'); return; }
+      if (data && typeof data === 'object') localStorage.setItem(STORE_KEY, JSON.stringify(data));
+      sessionStorage.setItem('majubah_synced', '1');
+      location.reload();
+    });
+  }
+
+  if (document.body) boot();
+  else document.addEventListener('DOMContentLoaded', boot);
+})();
 </script>
 </body>
 </html>
