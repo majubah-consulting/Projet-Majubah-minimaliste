@@ -5,7 +5,3 @@
 # Fichiers de travail non publiés
 screenshots/
 uploads/
-
-# Domaine personnalisé : à activer SEULEMENT quand le DNS Ionos sera configuré.
-# (Retire la ligne ci-dessous puis `git add CNAME` pour publier sur majubah-campus.com)
-CNAME
