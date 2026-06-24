@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/tokens/base.css">
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/styles.css">
+  <script src="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/_ds_bundle.js"></script>
+  <style>
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{ margin:0; font-family:var(--font-body); color:var(--text-body); background:var(--surface-page); -webkit-font-smoothing:antialiased; }
+    a{ color:inherit; text-decoration:none; }
+    h1,h2,h3{ font-family:var(--font-display); color:var(--text-strong); margin:0; }
+    p{ margin:0; }
+  </style>
+</helmet>
+<div data-screen-label="Catalogue des modules" style="min-height:100vh; display:flex; flex-direction:column;">
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.9); backdrop-filter:saturate(140%) blur(10px); border-bottom:1px solid var(--border-subtle);">
+    <div style="max-width:var(--container-xl); margin:0 auto; padding:0 var(--space-6); height:72px; display:flex; align-items:center; justify-content:space-between; gap:var(--space-6);">
+      <a href="index.html" style="display:flex; align-items:center; gap:10px;">
+        <x-import component-from-global-scope="MAJUBAHConsultingDesignSystem_a0b600.Logo" variant="horizontal" height="{{ 30 }}" hint-size="150px,30px"></x-import>
+        <span style="font-family:var(--font-display); font-weight:600; font-size:var(--text-sm); letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--color-bleu-acier); padding-left:12px; border-left:1px solid var(--border-default);">Campus</span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:var(--space-8);">
+        <a href="index.html" style="font-size:var(--text-sm); font-weight:600; color:var(--text-body);" style-hover="color:var(--color-bleu-nuit);">Accueil</a>
+        <a href="Modules.dc.html" style="font-size:var(--text-sm); font-weight:700; color:var(--color-corail);">Modules</a>
+        <a href="A-propos.dc.html" style="font-size:var(--text-sm); font-weight:600; color:var(--text-body);" style-hover="color:var(--color-bleu-nuit);">À propos</a>
+        <x-import component-from-global-scope="MAJUBAHConsultingDesignSystem_a0b600.Button" variant="accent" size="sm" href="Module-Management-Commercial.dc.html" hint-size="auto,38px">Commencer</x-import>
+      </nav>
+    </div>
+  </header>
+
+  <main style="flex:1;">
+    <section style="max-width:var(--container-xl); margin:0 auto; padding:var(--space-20) var(--space-6) var(--space-12);">
+      <p style="font-size:var(--text-sm); font-weight:700; letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--color-corail);">Catalogue</p>
+      <h1 style="margin-top:var(--space-4); font-size:var(--text-5xl); line-height:var(--leading-tight); letter-spacing:var(--tracking-tight); max-width:16ch;">Les modules de révision.</h1>
+      <p style="margin-top:var(--space-5); font-size:var(--text-md); line-height:var(--leading-relaxed); color:var(--text-body); max-width:54ch;">Le campus grandit module par module. Chaque module est une page complète, autonome, avec ses fiches, exercices, quiz et examen blanc.</p>
+    </section>
+
+    <section style="max-width:var(--container-xl); margin:0 auto; padding:0 var(--space-6) var(--space-32);">
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-6);">
+
+        <a href="Module-Management-Commercial.dc.html" style="display:block;">
+          <div style="position:relative; height:100%; background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); padding:var(--space-8); display:flex; flex-direction:column; transition:box-shadow .2s var(--ease-standard), transform .2s var(--ease-standard);" style-hover="box-shadow:var(--shadow-lg); transform:translateY(-3px);">
+            <div style="position:absolute; left:var(--space-8); right:var(--space-8); top:0; height:3px; background:var(--color-corail); border-radius:0 0 999px 999px;"></div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-success); background:var(--color-success-bg); padding:4px 10px; border-radius:999px;">● Disponible</span>
+              <span style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-bleu-acier); background:var(--surface-bleu-wash); padding:4px 10px; border-radius:999px;">Bac+3</span>
+            </div>
+            <h3 style="margin-top:var(--space-5); font-size:var(--text-xl); line-height:var(--leading-snug);">Réussir l'étude de cas — management commercial &amp; management d'équipe</h3>
+            <p style="margin-top:var(--space-3); font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-muted);">Préparation à l'épreuve certifiante de 3h30 : méthode, fiches, quiz, exercices et examen blanc.</p>
+            <div style="margin-top:var(--space-6); padding-top:var(--space-5); border-top:1px solid var(--border-subtle); display:flex; gap:var(--space-6);">
+              <div><p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); color:var(--text-subtle); font-weight:700;">Durée</p><p style="font-size:var(--text-sm); font-weight:600; color:var(--text-strong); margin-top:2px;">4–6 h</p></div>
+              <div><p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); color:var(--text-subtle); font-weight:700;">Épreuve</p><p style="font-size:var(--text-sm); font-weight:600; color:var(--text-strong); margin-top:2px;">8 juillet</p></div>
+            </div>
+            <span style="margin-top:var(--space-6); font-size:var(--text-sm); font-weight:700; color:var(--color-corail);">Accéder au module →</span>
+          </div>
+        </a>
+
+        <sc-for list="{{ upcoming }}" as="m" hint-placeholder-count="4">
+          <div style="height:100%; background:var(--surface-muted); border:1px dashed var(--border-default); border-radius:var(--radius-lg); padding:var(--space-8); display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--text-muted); background:var(--surface-sunken); padding:4px 10px; border-radius:999px;">À venir</span>
+              <span style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--text-subtle); background:#fff; border:1px solid var(--border-subtle); padding:4px 10px; border-radius:999px;">{{ m.public }}</span>
+            </div>
+            <h3 style="margin-top:var(--space-5); font-size:var(--text-lg); line-height:var(--leading-snug); color:var(--text-strong);">{{ m.title }}</h3>
+            <p style="margin-top:var(--space-3); font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-muted);">{{ m.desc }}</p>
+            <span style="margin-top:auto; padding-top:var(--space-6); font-size:var(--text-sm); font-weight:600; color:var(--text-subtle);">Bientôt disponible</span>
+          </div>
+        </sc-for>
+
+      </div>
+
+      <div style="margin-top:var(--space-16); background:var(--surface-navy); border-radius:var(--radius-xl); padding:var(--space-12) var(--space-16); position:relative; overflow:hidden; display:flex; align-items:center; justify-content:space-between; gap:var(--space-10); flex-wrap:wrap;">
+        <img src="assets/logo/sigle-white.png" alt="" aria-hidden="true" style="position:absolute; bottom:-120px; right:-80px; width:360px; height:auto; opacity:0.07; pointer-events:none;">
+        <div style="position:relative; max-width:46ch;">
+          <h2 style="color:#fff; font-size:var(--text-2xl); line-height:var(--leading-snug); letter-spacing:var(--tracking-tight);">Un patrimoine pédagogique qui s'enrichit chaque année.</h2>
+          <p style="margin-top:var(--space-4); font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-on-navy-muted);">IA, formation de formateurs, Qualiopi, communication, commerce, management, soft skills… De nouveaux modules rejoindront le campus au fil des formations MAJUBAH.</p>
+        </div>
+        <div style="position:relative;">
+          <x-import component-from-global-scope="MAJUBAHConsultingDesignSystem_a0b600.Button" variant="accent" size="lg" href="Module-Management-Commercial.dc.html" hint-size="auto,52px">Ouvrir le module Bac+3</x-import>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:var(--surface-muted); border-top:1px solid var(--border-subtle);">
+    <div style="max-width:var(--container-xl); margin:0 auto; padding:var(--space-12) var(--space-6); display:flex; align-items:center; justify-content:space-between; gap:var(--space-8); flex-wrap:wrap;">
+      <div style="display:flex; align-items:center; gap:var(--space-5);">
+        <x-import component-from-global-scope="MAJUBAHConsultingDesignSystem_a0b600.Logo" variant="horizontal" height="{{ 26 }}" hint-size="130px,26px"></x-import>
+        <span style="font-size:var(--text-sm); color:var(--text-muted);">Campus numérique privé · MAJUBAH Consulting</span>
+      </div>
+      <div style="display:flex; gap:var(--space-6); font-size:var(--text-sm); color:var(--text-muted);">
+        <a href="index.html" style-hover="color:var(--color-bleu-nuit);">Accueil</a>
+        <a href="Modules.dc.html" style-hover="color:var(--color-bleu-nuit);">Modules</a>
+        <a href="A-propos.dc.html" style-hover="color:var(--color-bleu-nuit);">À propos</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      upcoming: [
+        { public:'Pro', title:"Intégrer l'IA dans son métier", desc:"Former vos équipes à l'IA, sans esthétique science-fiction : usages concrets et cas pratiques." },
+        { public:'Formateurs', title:"Formation de formateurs", desc:"Concevoir et animer des formations efficaces, structurer la transmission des compétences." },
+        { public:'Organismes', title:"Réussir sa certification Qualiopi", desc:"Préparer l'audit, structurer ses preuves et piloter sa démarche qualité." },
+        { public:'Tous', title:"Communication & soft skills", desc:"Prendre la parole, convaincre, et collaborer : les compétences clés en situation pro." },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/tokens/base.css">
+  <link rel="stylesheet" href="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/styles.css">
+  <script src="_ds/majubah-consulting-design-system-a0b60080-30af-45d8-a878-bd93d04e39d7/_ds_bundle.js"></script>
+  <style>
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{ margin:0; font-family:var(--font-body); color:var(--text-body); background:var(--surface-page); -webkit-font-smoothing:antialiased; }
+    a{ color:inherit; text-decoration:none; }
+    h1,h2,h3,h4{ font-family:var(--font-display); color:var(--text-strong); margin:0; }
+    p{ margin:0; }
+    table{ border-collapse:collapse; width:100%; }
+    section[id]{ scroll-margin-top:148px; }
+  </style>
+</helmet>
+<div data-screen-label="Module Bac+3" style="min-height:100vh; display:flex; flex-direction:column;">
+
+  <header style="position:sticky; top:0; z-index:60; background:rgba(255,255,255,0.9); backdrop-filter:saturate(140%) blur(10px); border-bottom:1px solid var(--border-subtle);">
+    <div style="max-width:var(--container-xl); margin:0 auto; padding:0 var(--space-6); height:72px; display:flex; align-items:center; justify-content:space-between; gap:var(--space-6);">
+      <a href="index.html" style="display:flex; align-items:center; gap:10px;">
+        <x-import component-from-global-scope="MAJUBAHConsultingDesignSystem_a0b600.Logo" variant="horizontal" height="{{ 30 }}" hint-size="150px,30px"></x-import>
+        <span style="font-family:var(--font-display); font-weight:600; font-size:var(--text-sm); letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--color-bleu-acier); padding-left:12px; border-left:1px solid var(--border-default);">Campus</span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:var(--space-8);">
+        <a href="index.html" style="font-size:var(--text-sm); font-weight:600; color:var(--text-body);" style-hover="color:var(--color-bleu-nuit);">Accueil</a>
+        <a href="Modules.dc.html" style="font-size:var(--text-sm); font-weight:600; color:var(--text-body);" style-hover="color:var(--color-bleu-nuit);">Modules</a>
+        <a href="A-propos.dc.html" style="font-size:var(--text-sm); font-weight:600; color:var(--text-body);" style-hover="color:var(--color-bleu-nuit);">À propos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="flex:1;">
+
+    <!-- HERO -->
+    <section id="hero" style="position:relative; overflow:hidden; background:var(--surface-page); border-bottom:1px solid var(--border-subtle);">
+      <img src="assets/logo/sigle-bleu.png" alt="" aria-hidden="true" style="position:absolute; top:-110px; right:-130px; width:540px; height:auto; opacity:0.06; pointer-events:none;">
+      <div style="position:relative; max-width:var(--container-lg); margin:0 auto; padding:var(--space-16) var(--space-6) var(--space-12);">
+        <a href="Modules.dc.html" style="font-size:var(--text-sm); color:var(--text-muted); font-weight:600;" style-hover="color:var(--color-corail);">← Tous les modules</a>
+        <div style="margin-top:var(--space-5); display:inline-flex;"><x-import component-from-global-scope="MAJUBAHConsultingDesignSystem_a0b600.Badge" variant="soft-corail" caps="{{ true }}" hint-size="auto,24px">Bac+3 immobilier · Épreuve certifiante</x-import></div>
+        <h1 style="margin-top:var(--space-5); font-size:var(--text-5xl); line-height:var(--leading-tight); letter-spacing:var(--tracking-tight); max-width:18ch;">Réussir l'étude de cas — management commercial &amp; management d'équipe</h1>
+        <p style="margin-top:var(--space-5); font-size:var(--text-md); line-height:var(--leading-relaxed); color:var(--text-body); max-width:58ch;">Un parcours guidé pour réviser les notions clés, vous entraîner sur des cas type examen et arriver prêt le jour de l'épreuve de 3h30.</p>
+        <div style="margin-top:var(--space-8); display:flex; flex-wrap:wrap; gap:var(--space-3);">
+          <div style="display:flex; align-items:center; gap:8px; background:var(--surface-muted); border:1px solid var(--border-subtle); border-radius:var(--radius-pill); padding:8px 16px; font-size:var(--text-sm); color:var(--text-strong); font-weight:600;"><span style="color:var(--text-muted); font-weight:400;">Public</span> Bac+3 immobilier</div>
+          <div style="display:flex; align-items:center; gap:8px; background:var(--surface-muted); border:1px solid var(--border-subtle); border-radius:var(--radius-pill); padding:8px 16px; font-size:var(--text-sm); color:var(--text-strong); font-weight:600;"><span style="color:var(--text-muted); font-weight:400;">Épreuve</span> 3h30 · 8 juillet</div>
+          <div style="display:flex; align-items:center; gap:8px; background:var(--surface-muted); border:1px solid var(--border-subtle); border-radius:var(--radius-pill); padding:8px 16px; font-size:var(--text-sm); color:var(--text-strong); font-weight:600;"><span style="color:var(--text-muted); font-weight:400;">Temps estimé</span> 4 à 6 heures</div>
+        </div>
+        <div style="margin-top:var(--space-10); display:flex; gap:var(--space-4); flex-wrap:wrap;">
+          <x-import component-from-global-scope="MAJUBAHConsultingDesignSystem_a0b600.Button" variant="accent" size="lg" href="#progression" hint-size="auto,52px">Commencer les révisions</x-import>
+          <x-import component-from-global-scope="MAJUBAHConsultingDesignSystem_a0b600.Button" variant="secondary" size="lg" href="#examen-blanc" hint-size="auto,52px">Aller à l'examen blanc</x-import>
+        </div>
+      </div>
+    </section>
+
+    <!-- STICKY SUB-NAV -->
+    <nav aria-label="Navigation du module" style="position:sticky; top:72px; z-index:55; background:rgba(255,255,255,0.92); backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid var(--border-subtle);">
+      <div style="max-width:var(--container-lg); margin:0 auto; padding:0 var(--space-6); height:56px; display:flex; align-items:center; justify-content:space-between; gap:var(--space-6); overflow-x:auto;">
+        <div style="display:flex; align-items:center; gap:var(--space-6); white-space:nowrap;">
+          <a href="#methode" style="font-size:var(--text-sm); font-weight:600; color:var(--text-body);" style-hover="color:var(--color-corail);">Méthode</a>
+          <a href="#fiches" style="font-size:var(--text-sm); font-weight:600; color:var(--text-body);" style-hover="color:var(--color-corail);">Fiches</a>
+          <a href="#videos" style="font-size:var(--text-sm); font-weight:600; color:var(--text-body);" style-hover="color:var(--color-corail);">Vidéos</a>
+          <a href="#quiz" style="font-size:var(--text-sm); font-weight:600; color:var(--text-body);" style-hover="color:var(--color-corail);">Quiz</a>
+          <a href="#exercices" style="font-size:var(--text-sm); font-weight:600; color:var(--text-body);" style-hover="color:var(--color-corail);">Exercices</a>
+          <a href="#examen-blanc" style="font-size:var(--text-sm); font-weight:600; color:var(--text-body);" style-hover="color:var(--color-corail);">Examen blanc</a>
+          <a href="#checklist" style="font-size:var(--text-sm); font-weight:600; color:var(--text-body);" style-hover="color:var(--color-corail);">Checklist</a>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; white-space:nowrap;">
+          <div style="width:96px; height:6px; border-radius:var(--radius-pill); background:var(--surface-sunken); overflow:hidden;"><div style="height:100%; background:var(--color-corail); border-radius:var(--radius-pill); width:{{ progressPct }}%; transition:width .4s var(--ease-out);"></div></div>
+          <span style="font-size:var(--text-xs); font-weight:700; color:var(--color-bleu-nuit);">{{ progressPct }}%</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- PROGRESSION -->
+    <section id="progression" style="background:var(--surface-muted); border-bottom:1px solid var(--border-subtle);">
+      <div style="max-width:var(--container-lg); margin:0 auto; padding:var(--space-20) var(--space-6);">
+        <div style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:var(--space-12); align-items:center;">
+          <div>
+            <p style="font-size:var(--text-sm); font-weight:700; letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--color-corail);">Votre progression</p>
+            <h2 style="margin-top:var(--space-4); font-size:var(--text-3xl); line-height:var(--leading-tight); letter-spacing:var(--tracking-tight);">Avancez niveau par niveau.</h2>
+            <p style="margin-top:var(--space-4); font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-body); max-width:42ch;">Votre avancement est enregistré automatiquement sur cet appareil. Débloquez les six niveaux pour être prêt le jour J.</p>
+            <div style="margin-top:var(--space-8); display:flex; align-items:flex-end; gap:var(--space-4);">
+              <span style="font-family:var(--font-display); font-weight:700; font-size:var(--text-6xl); line-height:1; color:var(--color-bleu-nuit);">{{ progressPct }}<span style="font-size:var(--text-2xl); color:var(--text-muted);">%</span></span>
+              <span style="font-size:var(--text-sm); color:var(--text-muted); padding-bottom:10px;">{{ unlockedCount }} / 6 niveaux débloqués</span>
+            </div>
+            <div style="margin-top:var(--space-4); height:10px; border-radius:var(--radius-pill); background:var(--surface-sunken); overflow:hidden; max-width:380px;"><div style="height:100%; background:linear-gradient(90deg,var(--color-corail),var(--color-corail-clair)); border-radius:var(--radius-pill); width:{{ progressPct }}%; transition:width .5s var(--ease-out);"></div></div>
+            <button onClick="{{ resetProgress }}" style="margin-top:var(--space-6); background:none; border:none; padding:0; font-family:var(--font-body); font-size:var(--text-xs); color:var(--text-muted); cursor:pointer; text-decoration:underline; text-underline-offset:3px;" style-hover="color:var(--color-danger);">Réinitialiser ma progression</button>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-4);">
+            <sc-for list="{{ levels }}" as="lv" hint-placeholder-count="6">
+              <div style="background:{{ lv.cardBg }}; border:1px solid {{ lv.cardBorder }}; border-radius:var(--radius-lg); padding:var(--space-5); display:flex; gap:14px; align-items:flex-start; transition:all .3s var(--ease-standard);">
+                <div style="flex:none; width:40px; height:40px; border-radius:50%; background:{{ lv.iconBg }}; color:{{ lv.iconColor }}; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:700; font-size:var(--text-md);">{{ lv.badge }}</div>
+                <div><p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:{{ lv.statusColor }};">{{ lv.status }}</p><h4 style="margin-top:3px; font-size:var(--text-sm); color:{{ lv.nameColor }};">{{ lv.name }}</h4><p style="margin-top:3px; font-size:var(--text-xs); line-height:var(--leading-normal); color:var(--text-muted);">{{ lv.cond }}</p></div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPRENDRE -->
+    <section id="comprendre" style="max-width:var(--container-lg); margin:0 auto; padding:var(--space-24) var(--space-6) var(--space-16);">
+      <p style="font-size:var(--text-sm); font-weight:700; letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--color-corail);">Étape 1 · Comprendre l'épreuve</p>
+      <h2 style="margin-top:var(--space-4); font-size:var(--text-3xl); line-height:var(--leading-tight); letter-spacing:var(--tracking-tight); max-width:20ch;">Savoir précisément ce qui est évalué.</h2>
+      <p style="margin-top:var(--space-5); font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-body); max-width:60ch;">L'épreuve est une étude de cas d'agence immobilière. On attend des réponses <strong style="color:var(--text-strong);">structurées, opérationnelles et justifiées</strong> — pas une récitation de cours. Deux grands axes sont évalués, déclinés en plusieurs dossiers le jour de l'épreuve :</p>
+      <div style="margin-top:var(--space-8); display:grid; grid-template-columns:1fr 1fr; gap:var(--space-6);">
+        <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:var(--space-8); box-shadow:var(--shadow-xs);">
+          <h3 style="font-size:var(--text-lg);">Management commercial</h3>
+          <p style="margin-top:var(--space-3); font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-muted);">Marketing &amp; communication digitale, prospection, segmentation, services à valeur ajoutée, données CRM &amp; RGPD, veilles.</p>
+        </div>
+        <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:var(--space-8); box-shadow:var(--shadow-xs);">
+          <h3 style="font-size:var(--text-lg);">Management d'équipe</h3>
+          <p style="margin-top:var(--space-3); font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-muted);">Rites managériaux, motivation, inclusion, handicap, temps partiel, RSE et notions de droit du travail.</p>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-8); padding:var(--space-6); background:var(--surface-bleu-wash); border-radius:var(--radius-lg);">
+        <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-bleu-acier);">Thèmes travaillés</p>
+        <div style="margin-top:var(--space-4); display:flex; flex-wrap:wrap; gap:10px;">
+          <span style="font-family:var(--font-display); font-weight:700; font-size:var(--text-sm); color:var(--color-bleu-nuit); background:#fff; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:6px 12px;">Stratégie commerciale</span>
+          <span style="font-family:var(--font-display); font-weight:700; font-size:var(--text-sm); color:var(--color-bleu-nuit); background:#fff; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:6px 12px;">Exploitation des données &amp; RGPD</span>
+          <span style="font-family:var(--font-display); font-weight:700; font-size:var(--text-sm); color:var(--color-bleu-nuit); background:#fff; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:6px 12px;">Services à valeur ajoutée</span>
+          <span style="font-family:var(--font-display); font-weight:700; font-size:var(--text-sm); color:var(--color-bleu-nuit); background:#fff; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:6px 12px;">Management d'équipe</span>
+          <span style="font-family:var(--font-display); font-weight:700; font-size:var(--text-sm); color:var(--color-bleu-nuit); background:#fff; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:6px 12px;">Inclusion &amp; handicap</span>
+          <span style="font-family:var(--font-display); font-weight:700; font-size:var(--text-sm); color:var(--color-bleu-nuit); background:#fff; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:6px 12px;">RSE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- METHODE -->
+    <section id="methode" style="background:var(--surface-navy); position:relative; overflow:hidden;">
+      <img src="assets/logo/sigle-white.png" alt="" aria-hidden="true" style="position:absolute; top:-120px; right:-120px; width:460px; height:auto; opacity:0.06; pointer-events:none;">
+      <div style="position:relative; max-width:var(--container-lg); margin:0 auto; padding:var(--space-24) var(--space-6);">
+        <p style="font-size:var(--text-sm); font-weight:700; letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--color-corail-clair);">Étape 2 · La méthode de copie</p>
+        <h2 style="margin-top:var(--space-4); color:#fff; font-size:var(--text-3xl); line-height:var(--leading-tight); letter-spacing:var(--tracking-tight); max-width:22ch;">Une structure de réponse gagnante, à reproduire à chaque question.</h2>
+        <div style="margin-top:var(--space-10); display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-4);">
+          <div style="background:rgba(255,255,255,0.05); border:1px solid var(--border-on-navy); border-radius:var(--radius-lg); padding:var(--space-6);"><div style="font-family:var(--font-display); font-weight:700; color:var(--color-corail-clair); font-size:var(--text-lg);">1 · Constat</div><p style="margin-top:8px; font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-on-navy-muted);">Tiré directement du sujet et des annexes.</p></div>
+          <div style="background:rgba(255,255,255,0.05); border:1px solid var(--border-on-navy); border-radius:var(--radius-lg); padding:var(--space-6);"><div style="font-family:var(--font-display); font-weight:700; color:var(--color-corail-clair); font-size:var(--text-lg);">2 · Objectif</div><p style="margin-top:8px; font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-on-navy-muted);">Clair et mesurable.</p></div>
+          <div style="background:rgba(255,255,255,0.05); border:1px solid var(--border-on-navy); border-radius:var(--radius-lg); padding:var(--space-6);"><div style="font-family:var(--font-display); font-weight:700; color:var(--color-corail-clair); font-size:var(--text-lg);">3 · Actions</div><p style="margin-top:8px; font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-on-navy-muted);">Concrètes et adaptées au contexte.</p></div>
+          <div style="background:rgba(255,255,255,0.05); border:1px solid var(--border-on-navy); border-radius:var(--radius-lg); padding:var(--space-6);"><div style="font-family:var(--font-display); font-weight:700; color:var(--color-corail-clair); font-size:var(--text-lg);">4 · Responsable + fréquence</div><p style="margin-top:8px; font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-on-navy-muted);">Qui agit, et à quel rythme.</p></div>
+          <div style="background:rgba(255,255,255,0.05); border:1px solid var(--border-on-navy); border-radius:var(--radius-lg); padding:var(--space-6);"><div style="font-family:var(--font-display); font-weight:700; color:var(--color-corail-clair); font-size:var(--text-lg);">5 · KPI</div><p style="margin-top:8px; font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-on-navy-muted);">Un indicateur de suivi mesurable.</p></div>
+          <div style="background:rgba(255,255,255,0.05); border:1px solid var(--border-on-navy); border-radius:var(--radius-lg); padding:var(--space-6);"><div style="font-family:var(--font-display); font-weight:700; color:var(--color-corail-clair); font-size:var(--text-lg);">6 · Justification</div><p style="margin-top:8px; font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-on-navy-muted);">Performance, qualité, client, équipe, conformité.</p></div>
+        </div>
+        <div style="margin-top:var(--space-10); background:rgba(255,255,255,0.04); border-left:var(--border-accent) solid var(--color-corail); border-radius:var(--radius-md); padding:var(--space-6) var(--space-8);">
+          <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-corail-clair);">Exemple de réponse type</p>
+          <p style="margin-top:var(--space-3); font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-on-navy); max-width:72ch;">« L'agence subit une concurrence digitale et doit reconquérir des mandats. <strong style="color:#fff;">L'objectif</strong> est d'augmenter le nombre de rendez-vous vendeurs qualifiés. Je propose une <strong style="color:#fff;">campagne de prospection multicanale</strong> (portails, réseaux sociaux locaux, relances CRM, phoning, partenariats). La directrice pilote le suivi, les négociateurs réalisent les actions chaque semaine. <strong style="color:#fff;">Les indicateurs</strong> suivis sont le nombre de contacts, de rendez-vous, le taux de transformation et le nombre de mandats signés. »</p>
+        </div>
+        <div style="margin-top:var(--space-8); display:flex; align-items:center; gap:var(--space-4); flex-wrap:wrap;">
+          <button onClick="{{ toggleMethode }}" style="{{ methodeBtnStyle }}">{{ methodeBtnLabel }}</button>
+          <span style="font-size:var(--text-sm); color:var(--text-on-navy-muted);">{{ methodeHint }}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FICHES -->
+    <section id="fiches" style="max-width:var(--container-lg); margin:0 auto; padding:var(--space-24) var(--space-6) var(--space-16);">
+      <p style="font-size:var(--text-sm); font-weight:700; letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--color-corail);">Étape 3 · Réviser</p>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-6); flex-wrap:wrap;">
+        <h2 style="margin-top:var(--space-4); font-size:var(--text-3xl); line-height:var(--leading-tight); letter-spacing:var(--tracking-tight);">12 fiches de révision.</h2>
+        <span style="font-size:var(--text-sm); color:var(--text-muted);">Cliquez pour déplier chaque notion.</span>
+      </div>
+      <div style="margin-top:var(--space-8); display:flex; flex-direction:column; gap:var(--space-3);">
+        <sc-for list="{{ fiches }}" as="f" hint-placeholder-count="12">
+          <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); box-shadow:var(--shadow-xs); overflow:hidden;">
+            <button onClick="{{ f.onToggle }}" style="width:100%; display:flex; align-items:center; gap:var(--space-5); padding:var(--space-5) var(--space-6); background:none; border:none; cursor:pointer; text-align:left; font-family:var(--font-body);">
+              <span style="flex:none; width:34px; height:34px; border-radius:50%; background:var(--surface-bleu-wash); color:var(--color-bleu-nuit); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:700; font-size:var(--text-sm);">{{ f.num }}</span>
+              <span style="flex:1; font-family:var(--font-display); font-weight:600; font-size:var(--text-md); color:var(--text-strong);">{{ f.title }}</span>
+              <span style="flex:none; color:var(--color-corail); font-size:var(--text-xl); transform:{{ f.iconRotate }}; transition:transform .25s var(--ease-standard);">+</span>
+            </button>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:0 var(--space-6) var(--space-6) calc(var(--space-6) + 34px + var(--space-5)); display:flex; flex-direction:column; gap:var(--space-4);">
+                <p style="font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-body);">{{ f.summary }}</p>
+                <div>
+                  <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--text-muted);">Points clés</p>
+                  <ul style="margin:10px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:8px;">
+                    <sc-for list="{{ f.points }}" as="pt" hint-placeholder-count="4">
+                      <li style="display:flex; gap:10px; font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-body);"><span style="flex:none; color:var(--color-corail); font-weight:700;">›</span><span>{{ pt }}</span></li>
+                    </sc-for>
+                  </ul>
+                </div>
+                <div style="background:var(--surface-muted); border-radius:var(--radius-md); padding:var(--space-4) var(--space-5);">
+                  <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-corail);">Exemple immobilier</p>
+                  <p style="margin-top:6px; font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-body); font-style:italic;">{{ f.example }}</p>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos-section" style="background:var(--surface-muted); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+      <div style="max-width:var(--container-lg); margin:0 auto; padding:var(--space-24) var(--space-6);">
+        <p style="font-size:var(--text-sm); font-weight:700; letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--color-corail);">Ressources multimédias</p>
+        <h2 id="videos" style="margin-top:var(--space-4); font-size:var(--text-3xl); line-height:var(--leading-tight); letter-spacing:var(--tracking-tight);">Vidéos.</h2>
+        <p style="margin-top:var(--space-4); font-size:var(--text-sm); color:var(--text-muted);">Capsules courtes à regarder. Les fichiers seront ajoutés progressivement.</p>
+
+        <div style="margin-top:var(--space-5); display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-4);">
+          <sc-for list="{{ videos }}" as="v" hint-placeholder-count="10">
+            <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-xs);">
+              <sc-if value="{{ v.embed }}" hint-placeholder-val="{{ false }}">
+                <div style="aspect-ratio:16/9; background:var(--surface-navy); position:relative;">
+                  <iframe src="{{ v.embed }}" title="Lecteur vidéo HeyGen" frameborder="0" allow="encrypted-media; fullscreen;" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe>
+                </div>
+              </sc-if>
+              <sc-if value="{{ !v.embed }}" hint-placeholder-val="{{ true }}">
+                <div style="aspect-ratio:16/9; background:var(--surface-navy); display:flex; align-items:center; justify-content:center; position:relative;">
+                  <span style="width:46px; height:46px; border-radius:50%; background:rgba(255,255,255,0.14); color:#fff; display:flex; align-items:center; justify-content:center;">▶</span>
+                </div>
+              </sc-if>
+              <div style="padding:var(--space-4) var(--space-5);">
+                <p style="font-size:var(--text-sm); font-weight:600; line-height:var(--leading-snug); color:var(--text-strong);">{{ v.title }}</p>
+                <sc-if value="{{ !v.embed }}" hint-placeholder-val="{{ true }}">
+                  <p style="margin-top:6px; font-size:var(--text-xs); color:var(--text-subtle); font-style:italic;">Capsule à venir</p>
+                </sc-if>
+                <sc-if value="{{ v.embed }}" hint-placeholder-val="{{ false }}">
+                  <p style="margin-top:6px; font-size:var(--text-xs); color:var(--color-success); font-weight:600;">Disponible</p>
+                </sc-if>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" style="max-width:var(--container-md); margin:0 auto; padding:var(--space-24) var(--space-6) var(--space-16);">
+      <p style="font-size:var(--text-sm); font-weight:700; letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--color-corail);">Étape 4 · S'entraîner</p>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-6); flex-wrap:wrap;">
+        <h2 style="margin-top:var(--space-4); font-size:var(--text-3xl); line-height:var(--leading-tight); letter-spacing:var(--tracking-tight);">Quiz — 20 questions.</h2>
+        <div style="text-align:right;"><p style="font-family:var(--font-display); font-weight:700; font-size:var(--text-2xl); color:var(--color-bleu-nuit);">{{ quizCorrect }}<span style="color:var(--text-subtle); font-size:var(--text-lg);">/{{ quizAnswered }}</span></p><p style="font-size:var(--text-xs); color:var(--text-muted);">bonnes réponses</p></div>
+      </div>
+      <p style="margin-top:var(--space-3); font-size:var(--text-sm); color:var(--text-muted);">Choisissez une réponse, validez, et lisez l'explication. Objectif : 80 % ou plus.</p>
+      <div style="margin-top:var(--space-8); display:flex; flex-direction:column; gap:var(--space-5);">
+        <sc-for list="{{ quiz }}" as="q" hint-placeholder-count="6">
+          <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:var(--space-6); box-shadow:var(--shadow-xs);">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="font-family:var(--font-display); font-weight:700; font-size:var(--text-sm); color:var(--text-subtle);">{{ q.num }}</span>
+              <span style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-bleu-acier); background:var(--surface-bleu-wash); padding:3px 9px; border-radius:var(--radius-pill);">{{ q.theme }}</span>
+            </div>
+            <p style="margin-top:var(--space-3); font-size:var(--text-md); font-weight:600; line-height:var(--leading-snug); color:var(--text-strong);">{{ q.question }}</p>
+            <div style="margin-top:var(--space-4); display:flex; flex-direction:column; gap:10px;">
+              <sc-for list="{{ q.choices }}" as="c" hint-placeholder-count="4">
+                <button onClick="{{ c.onClick }}" style="{{ c.style }}"><span style="flex:1;">{{ c.label }}</span><span style="flex:none; font-weight:700;">{{ c.mark }}</span></button>
+              </sc-for>
+            </div>
+            <sc-if value="{{ q.showValidate }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ q.onValidate }}" style="margin-top:var(--space-4); font-family:var(--font-body); font-weight:700; font-size:var(--text-sm); color:#fff; background:var(--color-bleu-nuit); border:none; border-radius:var(--radius-pill); padding:11px 22px; cursor:pointer;">Valider</button>
+            </sc-if>
+            <sc-if value="{{ q.checked }}" hint-placeholder-val="{{ false }}">
+              <div style="{{ q.feedbackStyle }}">
+                <p style="font-weight:700; font-size:var(--text-sm); color:{{ q.feedbackColor }};">{{ q.feedbackTitle }}</p>
+                <p style="margin-top:6px; font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-body);">{{ q.explanation }}</p>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- EXERCICES -->
+    <section id="exercices" style="background:var(--surface-muted); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+      <div style="max-width:var(--container-md); margin:0 auto; padding:var(--space-24) var(--space-6);">
+        <p style="font-size:var(--text-sm); font-weight:700; letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--color-corail);">Étape 5 · Mini-cas</p>
+        <h2 style="margin-top:var(--space-4); font-size:var(--text-3xl); line-height:var(--leading-tight); letter-spacing:var(--tracking-tight);">5 exercices type examen.</h2>
+        <p style="margin-top:var(--space-4); font-size:var(--text-sm); color:var(--text-muted);">Rédigez votre réponse (sauvegardée automatiquement), puis comparez avec le corrigé.</p>
+
+        <div style="margin-top:var(--space-8); display:flex; flex-direction:column; gap:var(--space-6);">
+
+          <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:var(--space-6) var(--space-8); box-shadow:var(--shadow-xs);">
+            <div style="display:flex; align-items:center; gap:10px;"><span style="font-family:var(--font-display); font-weight:700; color:var(--color-corail);">01</span><h3 style="font-size:var(--text-lg);">Diagnostic express</h3></div>
+            <p style="margin-top:var(--space-3); font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body);">En 5 points, identifiez les enjeux, les contraintes, les cibles, les forces et les risques du cas.</p>
+            <textarea onChange="{{ ex_diagnostic_input }}" value="{{ ex_diagnostic_text }}" placeholder="Votre diagnostic en 5 points…" style="margin-top:var(--space-4); width:100%; min-height:120px; resize:vertical; font-family:var(--font-body); font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-strong); padding:14px 16px; border:1.5px solid var(--border-default); border-radius:var(--radius-md); background:var(--surface-page);"></textarea>
+            <button onClick="{{ ex_diagnostic_toggle }}" style="margin-top:var(--space-4); font-family:var(--font-body); font-weight:700; font-size:var(--text-sm); color:var(--color-bleu-nuit); background:transparent; border:1.5px solid var(--border-default); border-radius:var(--radius-pill); padding:9px 20px; cursor:pointer;">{{ ex_diagnostic_label }}</button>
+            <sc-if value="{{ ex_diagnostic_revealed }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:var(--space-5); background:var(--surface-bleu-wash); border-radius:var(--radius-md); padding:var(--space-5) var(--space-6);">
+                <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-bleu-acier);">Corrigé indicatif</p>
+                <ul style="margin:10px 0 0; padding-left:18px; font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body);">
+                  <li><strong>Enjeu :</strong> reconquérir des mandats face à la concurrence digitale.</li>
+                  <li><strong>Contraintes :</strong> pression sur les prix, notoriété digitale à renforcer.</li>
+                  <li><strong>Cibles :</strong> familles / primo-accédants, investisseurs, bailleurs.</li>
+                  <li><strong>Forces :</strong> ancrage local, équipe, portefeuille existant.</li>
+                  <li><strong>Risques :</strong> perte de parts de marché et de visibilité.</li>
+                </ul>
+              </div>
+            </sc-if>
+          </div>
+
+          <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:var(--space-6) var(--space-8); box-shadow:var(--shadow-xs);">
+            <div style="display:flex; align-items:center; gap:10px;"><span style="font-family:var(--font-display); font-weight:700; color:var(--color-corail);">02</span><h3 style="font-size:var(--text-lg);">Plan de prospection</h3></div>
+            <p style="margin-top:var(--space-3); font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body);">Votre agence veut reconquérir des mandats sur un quartier concurrentiel. Construisez un plan en complétant : zone, cible, canal, action, fréquence, KPI.</p>
+            <textarea onChange="{{ ex_prospection_input }}" value="{{ ex_prospection_text }}" placeholder="Une ligne par zone : zone · cible · canal · action · fréquence · KPI…" style="margin-top:var(--space-4); width:100%; min-height:120px; resize:vertical; font-family:var(--font-body); font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-strong); padding:14px 16px; border:1.5px solid var(--border-default); border-radius:var(--radius-md); background:var(--surface-page);"></textarea>
+            <button onClick="{{ ex_prospection_toggle }}" style="margin-top:var(--space-4); font-family:var(--font-body); font-weight:700; font-size:var(--text-sm); color:var(--color-bleu-nuit); background:transparent; border:1.5px solid var(--border-default); border-radius:var(--radius-pill); padding:9px 20px; cursor:pointer;">{{ ex_prospection_label }}</button>
+            <sc-if value="{{ ex_prospection_revealed }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:var(--space-5); overflow-x:auto;">
+                <table style="font-size:var(--text-xs); min-width:560px;">
+                  <thead><tr style="background:var(--surface-sunken);">
+                    <th style="text-align:left; padding:10px 12px; font-family:var(--font-display); color:var(--color-bleu-nuit);">Zone</th>
+                    <th style="text-align:left; padding:10px 12px; font-family:var(--font-display); color:var(--color-bleu-nuit);">Cible</th>
+                    <th style="text-align:left; padding:10px 12px; font-family:var(--font-display); color:var(--color-bleu-nuit);">Canal</th>
+                    <th style="text-align:left; padding:10px 12px; font-family:var(--font-display); color:var(--color-bleu-nuit);">Action</th>
+                    <th style="text-align:left; padding:10px 12px; font-family:var(--font-display); color:var(--color-bleu-nuit);">Fréquence</th>
+                    <th style="text-align:left; padding:10px 12px; font-family:var(--font-display); color:var(--color-bleu-nuit);">KPI</th>
+                  </tr></thead>
+                  <tbody>
+                    <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:10px 12px;">Quartier résidentiel</td><td style="padding:10px 12px;">Familles / primo-accédants</td><td style="padding:10px 12px;">Réseaux sociaux + terrain</td><td style="padding:10px 12px;">Estimation offerte + contenu quartier</td><td style="padding:10px 12px;">Hebdomadaire</td><td style="padding:10px 12px;">RDV estimation</td></tr>
+                    <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:10px 12px;">Centre-ville</td><td style="padding:10px 12px;">Investisseurs / cadres</td><td style="padding:10px 12px;">LinkedIn + portails</td><td style="padding:10px 12px;">Rentabilité &amp; gestion locative</td><td style="padding:10px 12px;">Mensuelle</td><td style="padding:10px 12px;">Leads qualifiés</td></tr>
+                    <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:10px 12px;">Sud-Est</td><td style="padding:10px 12px;">Étudiants / bailleurs</td><td style="padding:10px 12px;">Partenariats écoles + annonces</td><td style="padding:10px 12px;">Offre gestion locative</td><td style="padding:10px 12px;">Mensuelle</td><td style="padding:10px 12px;">Mandats location</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </sc-if>
+          </div>
+
+          <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:var(--space-6) var(--space-8); box-shadow:var(--shadow-xs);">
+            <div style="display:flex; align-items:center; gap:10px;"><span style="font-family:var(--font-display); font-weight:700; color:var(--color-corail);">03</span><h3 style="font-size:var(--text-lg);">Services additionnels</h3></div>
+            <p style="margin-top:var(--space-3); font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body);">Pour trois cibles différentes, proposez un service additionnel et sa valeur ajoutée pour le client et pour l'agence.</p>
+            <textarea onChange="{{ ex_services_input }}" value="{{ ex_services_text }}" placeholder="Cible · service proposé · valeur ajoutée…" style="margin-top:var(--space-4); width:100%; min-height:110px; resize:vertical; font-family:var(--font-body); font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-strong); padding:14px 16px; border:1.5px solid var(--border-default); border-radius:var(--radius-md); background:var(--surface-page);"></textarea>
+            <button onClick="{{ ex_services_toggle }}" style="margin-top:var(--space-4); font-family:var(--font-body); font-weight:700; font-size:var(--text-sm); color:var(--color-bleu-nuit); background:transparent; border:1.5px solid var(--border-default); border-radius:var(--radius-pill); padding:9px 20px; cursor:pointer;">{{ ex_services_label }}</button>
+            <sc-if value="{{ ex_services_revealed }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:var(--space-5); background:var(--surface-bleu-wash); border-radius:var(--radius-md); padding:var(--space-5) var(--space-6);">
+                <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-bleu-acier);">Corrigé indicatif</p>
+                <ul style="margin:10px 0 0; padding-left:18px; font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body);">
+                  <li><strong>Investisseur →</strong> gestion locative &amp; conseil rentabilité → revenu récurrent pour l'agence.</li>
+                  <li><strong>Primo-accédant →</strong> accompagnement financement → sécurisation de la vente, confiance.</li>
+                  <li><strong>Bailleur →</strong> assurance loyers impayés → tranquillité, fidélisation.</li>
+                </ul>
+              </div>
+            </sc-if>
+          </div>
+
+          <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:var(--space-6) var(--space-8); box-shadow:var(--shadow-xs);">
+            <div style="display:flex; align-items:center; gap:10px;"><span style="font-family:var(--font-display); font-weight:700; color:var(--color-corail);">04</span><h3 style="font-size:var(--text-lg);">CRM &amp; RGPD</h3></div>
+            <p style="margin-top:var(--space-3); font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body);">Pour chaque donnée CRM, indiquez son utilité, l'action commerciale associée et la précaution RGPD.</p>
+            <textarea onChange="{{ ex_crm_input }}" value="{{ ex_crm_text }}" placeholder="Donnée · utilité · action commerciale · précaution RGPD…" style="margin-top:var(--space-4); width:100%; min-height:110px; resize:vertical; font-family:var(--font-body); font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-strong); padding:14px 16px; border:1.5px solid var(--border-default); border-radius:var(--radius-md); background:var(--surface-page);"></textarea>
+            <button onClick="{{ ex_crm_toggle }}" style="margin-top:var(--space-4); font-family:var(--font-body); font-weight:700; font-size:var(--text-sm); color:var(--color-bleu-nuit); background:transparent; border:1.5px solid var(--border-default); border-radius:var(--radius-pill); padding:9px 20px; cursor:pointer;">{{ ex_crm_label }}</button>
+            <sc-if value="{{ ex_crm_revealed }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:var(--space-5); overflow-x:auto;">
+                <table style="font-size:var(--text-xs); min-width:560px;">
+                  <thead><tr style="background:var(--surface-sunken);">
+                    <th style="text-align:left; padding:10px 12px; font-family:var(--font-display); color:var(--color-bleu-nuit);">Donnée CRM</th>
+                    <th style="text-align:left; padding:10px 12px; font-family:var(--font-display); color:var(--color-bleu-nuit);">Utilité</th>
+                    <th style="text-align:left; padding:10px 12px; font-family:var(--font-display); color:var(--color-bleu-nuit);">Action commerciale</th>
+                    <th style="text-align:left; padding:10px 12px; font-family:var(--font-display); color:var(--color-bleu-nuit);">Précaution RGPD</th>
+                  </tr></thead>
+                  <tbody>
+                    <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:10px 12px;">Budget</td><td style="padding:10px 12px;">Qualifier la capacité d'achat</td><td style="padding:10px 12px;">Proposer des biens adaptés</td><td style="padding:10px 12px;">Ne pas collecter d'infos inutiles</td></tr>
+                    <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:10px 12px;">Quartier recherché</td><td style="padding:10px 12px;">Segmenter la demande</td><td style="padding:10px 12px;">Envoyer une alerte ciblée</td><td style="padding:10px 12px;">Informer sur l'usage des données</td></tr>
+                    <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:10px 12px;">Historique de contact</td><td style="padding:10px 12px;">Prioriser les relances</td><td style="padding:10px 12px;">Relancer les prospects chauds</td><td style="padding:10px 12px;">Limiter la durée de conservation</td></tr>
+                    <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:10px 12px;">Origine du lead</td><td style="padding:10px 12px;">Mesurer les canaux efficaces</td><td style="padding:10px 12px;">Réallouer les efforts</td><td style="padding:10px 12px;">Sécuriser l'accès au CRM</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </sc-if>
+          </div>
+
+          <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:var(--space-6) var(--space-8); box-shadow:var(--shadow-xs);">
+            <div style="display:flex; align-items:center; gap:10px;"><span style="font-family:var(--font-display); font-weight:700; color:var(--color-corail);">05</span><h3 style="font-size:var(--text-lg);">Management &amp; RSE</h3></div>
+            <p style="margin-top:var(--space-3); font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body);">Proposez 10 actions d'animation d'équipe, puis classez au moins 5 actions dans une logique RSE (social, inclusion, environnement, éthique, relation client).</p>
+            <textarea onChange="{{ ex_mgmtrse_input }}" value="{{ ex_mgmtrse_text }}" placeholder="10 actions d'animation, puis classement RSE…" style="margin-top:var(--space-4); width:100%; min-height:140px; resize:vertical; font-family:var(--font-body); font-size:var(--text-sm); line-height:var(--leading-normal); color:var(--text-strong); padding:14px 16px; border:1.5px solid var(--border-default); border-radius:var(--radius-md); background:var(--surface-page);"></textarea>
+            <button onClick="{{ ex_mgmtrse_toggle }}" style="margin-top:var(--space-4); font-family:var(--font-body); font-weight:700; font-size:var(--text-sm); color:#fff; background:var(--color-corail); border:none; border-radius:var(--radius-pill); padding:10px 22px; cursor:pointer;">{{ ex_mgmtrse_label }}</button>
+            <sc-if value="{{ ex_mgmtrse_revealed }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:var(--space-5); background:var(--surface-bleu-wash); border-radius:var(--radius-md); padding:var(--space-5) var(--space-6);">
+                <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-bleu-acier);">Corrigé indicatif</p>
+                <ol style="margin:10px 0 0; padding-left:18px; font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body);">
+                  <li>Réunion commerciale hebdomadaire avec suivi des objectifs.</li>
+                  <li>Point individuel mensuel avec chaque collaborateur.</li>
+                  <li>Rituel de reconnaissance des réussites. <em>(social)</em></li>
+                  <li>Adaptation du poste pour un collaborateur en situation de handicap. <em>(inclusion)</em></li>
+                  <li>Organisation compatible avec le temps partiel thérapeutique. <em>(inclusion)</em></li>
+                  <li>Formation interne aux outils digitaux et CRM.</li>
+                  <li>Charte relation client responsable. <em>(relation client)</em></li>
+                  <li>Challenge commercial équilibré, sans pratiques agressives. <em>(éthique)</em></li>
+                  <li>Partenariat local avec les acteurs du quartier. <em>(engagement local)</em></li>
+                  <li>Réduction des impressions et signature électronique. <em>(environnement)</em></li>
+                </ol>
+              </div>
+            </sc-if>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXAMEN BLANC -->
+    <section id="examen-blanc" style="max-width:var(--container-md); margin:0 auto; padding:var(--space-24) var(--space-6) var(--space-16);">
+      <p style="font-size:var(--text-sm); font-weight:700; letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--color-corail);">Étape 6 · En conditions réelles</p>
+      <h2 style="margin-top:var(--space-4); font-size:var(--text-3xl); line-height:var(--leading-tight); letter-spacing:var(--tracking-tight);">Examen blanc — étude de cas.</h2>
+      <p style="margin-top:var(--space-4); font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-body); max-width:60ch;">Un cas d'entraînement <strong>100&nbsp;% fictif</strong>, conçu pour s'exercer aux mêmes compétences que l'épreuve certificative. Traitez chaque dossier en conditions, puis révélez le corrigé méthodologique en bas de page.</p>
+
+      <div style="margin-top:var(--space-5); background:var(--surface-muted); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:var(--space-4) var(--space-5); font-size:var(--text-xs); color:var(--text-muted); line-height:var(--leading-normal);">
+        <strong style="color:var(--text-body);">Avertissement.</strong> L'agence « Cap Horizon Immobilier », ses collaborateurs et toutes les données des annexes sont entièrement imaginaires et créés pour cet entraînement. Toute ressemblance avec un sujet d'examen réel serait fortuite.
+      </div>
+
+      <!-- LE SUJET -->
+      <div style="margin-top:var(--space-10); background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:var(--space-8); box-shadow:var(--shadow-xs);">
+        <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-corail);">Le sujet</p>
+        <h3 style="margin-top:var(--space-3); font-size:var(--text-xl);">Repositionner l'agence Cap Horizon Immobilier (Nantes)</h3>
+        <p style="margin-top:var(--space-4); font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body);">L'agence <strong>Cap Horizon Immobilier</strong>, installée dans l'éco-quartier <strong>Bottière-Chénaie à Nantes</strong>, a été créée il y a 6 ans. Son activité est restée stable jusqu'en 2024, mais l'arrivée de néo-agences à honoraires réduits, la montée des mandataires indépendants et l'évolution des comportements d'achat fragilisent son modèle. Sa clientèle se diversifie : étudiants, jeunes actifs, familles primo-accédantes et investisseurs locatifs.</p>
+        <p style="margin-top:var(--space-4); font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body);">Le dirigeant souhaite&nbsp;: <strong>(1)</strong> reconquérir des parts de marché, <strong>(2)</strong> moderniser sa prospection et sa communication digitale, <strong>(3)</strong> renforcer la cohésion d'une équipe aux profils variés, <strong>(4)</strong> lancer des services à valeur ajoutée, <strong>(5)</strong> structurer une démarche RSE tout en sécurisant ses obligations RH.</p>
+        <div style="margin-top:var(--space-5); background:var(--surface-muted); border-radius:var(--radius-md); padding:var(--space-4) var(--space-5);">
+          <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--text-muted);">L'équipe en place (5 personnes)</p>
+          <ul style="margin:10px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:7px; font-size:var(--text-sm); color:var(--text-body);">
+            <li style="display:flex; gap:10px;"><span style="flex:none; color:var(--color-corail); font-weight:700;">›</span><span><strong>Karim Benali</strong> — directeur d'agence</span></li>
+            <li style="display:flex; gap:10px;"><span style="flex:none; color:var(--color-corail); font-weight:700;">›</span><span><strong>Sophie Marchand</strong> — négociatrice confirmée (transaction)</span></li>
+            <li style="display:flex; gap:10px;"><span style="flex:none; color:var(--color-corail); font-weight:700;">›</span><span><strong>Lucas Fontaine</strong> — négociateur junior, recruté il y a 2 mois (intégration en cours)</span></li>
+            <li style="display:flex; gap:10px;"><span style="flex:none; color:var(--color-corail); font-weight:700;">›</span><span><strong>Inès Royer</strong> — conseillère en gestion locative, reconnue travailleuse handicapée (RQTH)</span></li>
+            <li style="display:flex; gap:10px;"><span style="flex:none; color:var(--color-corail); font-weight:700;">›</span><span><strong>Awa Diallo</strong> — assistante commerciale, en télétravail 2 jours par semaine</span></li>
+          </ul>
+        </div>
+        <p style="margin-top:var(--space-5); font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-strong); font-style:italic;">Problématique&nbsp;: comment repositionner durablement Cap Horizon Immobilier sur le marché nantais, en combinant stratégie commerciale, innovation marketing et management responsable&nbsp;?</p>
+      </div>
+
+      <!-- ANNEXES -->
+      <h3 style="margin-top:var(--space-12); font-size:var(--text-lg);">Annexes</h3>
+      <p style="margin-top:var(--space-2); font-size:var(--text-sm); color:var(--text-muted);">Cliquez pour déplier chaque annexe. Toutes les données sont fictives.</p>
+      <div style="margin-top:var(--space-5); display:flex; flex-direction:column; gap:var(--space-3);">
+
+        <details style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:var(--space-4) var(--space-5); box-shadow:var(--shadow-xs);">
+          <summary style="cursor:pointer; font-weight:600; font-size:var(--text-sm); color:var(--text-strong);">Annexe 1 — La concurrence autour de Bottière-Chénaie</summary>
+          <div style="margin-top:var(--space-4); overflow-x:auto;">
+            <table style="font-size:var(--text-xs); min-width:520px; width:100%; border-collapse:collapse;">
+              <thead><tr style="background:var(--surface-muted);">
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Agence (fictive)</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Services</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Note</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Avis</th>
+              </tr></thead>
+              <tbody style="color:var(--text-body);">
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Néo Clés Nantes (100 % digital)</td><td style="padding:9px 12px;">Transaction</td><td style="padding:9px 12px;">4,3</td><td style="padding:9px 12px;">1 020</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Loire &amp; Co Immobilier</td><td style="padding:9px 12px;">Transaction, gestion</td><td style="padding:9px 12px;">4,1</td><td style="padding:9px 12px;">540</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Erdre Immo</td><td style="padding:9px 12px;">Transaction, location</td><td style="padding:9px 12px;">4,8</td><td style="padding:9px 12px;">87</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Habitat Atlantique</td><td style="padding:9px 12px;">Gestion, syndic</td><td style="padding:9px 12px;">3,4</td><td style="padding:9px 12px;">198</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Sèvre Gestion</td><td style="padding:9px 12px;">Location, gestion, syndic</td><td style="padding:9px 12px;">3,0</td><td style="padding:9px 12px;">410</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Cap Atlantique Immo</td><td style="padding:9px 12px;">Vente, location</td><td style="padding:9px 12px;">4,6</td><td style="padding:9px 12px;">132</td></tr>
+              </tbody>
+            </table>
+            <p style="margin-top:var(--space-3); font-size:var(--text-xs); color:var(--text-muted); line-height:var(--leading-normal);">Bottière-Chénaie est un éco-quartier récent et en pleine extension (tramway ligne 1, groupe scolaire, commerces de proximité, espaces verts). Habitat majoritairement collectif récent (T1 à T4, dominante T2/T3), mixité de logements sociaux et privés, attractif pour étudiants, jeunes actifs et primo-accédants.</p>
+          </div>
+        </details>
+
+        <details style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:var(--space-4) var(--space-5); box-shadow:var(--shadow-xs);">
+          <summary style="cursor:pointer; font-weight:600; font-size:var(--text-sm); color:var(--text-strong);">Annexe 2 — Synthèse du marché immobilier nantais (sept. 2025)</summary>
+          <div style="margin-top:var(--space-4); overflow-x:auto;">
+            <table style="font-size:var(--text-xs); min-width:420px; width:100%; border-collapse:collapse;">
+              <thead><tr style="background:var(--surface-muted);">
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Indicateur</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Valeur (fictive)</th>
+              </tr></thead>
+              <tbody style="color:var(--text-body);">
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Prix moyen appartement Nantes</td><td style="padding:9px 12px;">3 920 €/m² (+1,9 % sur un an)</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Prix moyen maison Nantes</td><td style="padding:9px 12px;">4 580 €/m² (+0,8 % sur un an)</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Délai de vente moyen</td><td style="padding:9px 12px;">58 jours, contre 71 en sept. 2024</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Prix quartier Bottière-Chénaie</td><td style="padding:9px 12px;">Appartements : 3 410 €/m² ; Maisons : 3 600 €/m²</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Évolution 12 mois (Bottière-Chénaie)</td><td style="padding:9px 12px;">Appartements +2,2 % ; Maisons –1,0 %</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:var(--space-4) var(--space-5); box-shadow:var(--shadow-xs);">
+          <summary style="cursor:pointer; font-weight:600; font-size:var(--text-sm); color:var(--text-strong);">Annexe 3 — Segmentation géographique de Nantes Métropole</summary>
+          <div style="margin-top:var(--space-4); overflow-x:auto;">
+            <table style="font-size:var(--text-xs); min-width:560px; width:100%; border-collapse:collapse;">
+              <thead><tr style="background:var(--surface-muted);">
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Zone</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Secteurs clés</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Profils dominants</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Stratégie</th>
+              </tr></thead>
+              <tbody style="color:var(--text-body);">
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Centre (44000)</td><td style="padding:9px 12px;">Graslin, Bouffay, Decré, Talensac</td><td style="padding:9px 12px;">Cadres, investisseurs</td><td style="padding:9px 12px;">Haut de gamme, forte présence digitale</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Nord-Est (44300)</td><td style="padding:9px 12px;">Bottière, Doulon, Ranzay, St-Joseph de Porterie</td><td style="padding:9px 12px;">Familles, primo-accédants</td><td style="padding:9px 12px;">Offre familiale, bon rapport qualité/prix</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Ouest (44100)</td><td style="padding:9px 12px;">Dervallières, Zola, Chantenay</td><td style="padding:9px 12px;">Jeunes couples, primo-accédants</td><td style="padding:9px 12px;">Offre accessible, argument cadre de vie</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Île de Nantes / Sud (44200)</td><td style="padding:9px 12px;">République, Beaulieu, Mangin</td><td style="padding:9px 12px;">Jeunes actifs, étudiants</td><td style="padding:9px 12px;">Petits logements, gestion locative</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Périphérie</td><td style="padding:9px 12px;">Rezé, St-Herblain, Orvault, Carquefou, Vertou</td><td style="padding:9px 12px;">CSP+, familles établies</td><td style="padding:9px 12px;">Approche premium, personnalisation</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:var(--space-4) var(--space-5); box-shadow:var(--shadow-xs);">
+          <summary style="cursor:pointer; font-weight:600; font-size:var(--text-sm); color:var(--text-strong);">Annexe 4 — Tableau d'actions managériales (à compléter)</summary>
+          <div style="margin-top:var(--space-4); overflow-x:auto;">
+            <table style="font-size:var(--text-xs); min-width:620px; width:100%; border-collapse:collapse;">
+              <thead><tr style="background:var(--surface-muted);">
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">N°</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Objectif</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Action d'animation</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Format / Durée</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Responsable</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Fréquence</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Suivi / KPI</th>
+              </tr></thead>
+              <tbody style="color:var(--text-body);">
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px; font-style:italic;">Ex.</td><td style="padding:9px 12px; font-style:italic;">Lancer une dynamique positive</td><td style="padding:9px 12px; font-style:italic;">Réunion « cap du mois » : planning + objectifs</td><td style="padding:9px 12px; font-style:italic;">Présentiel · 1h</td><td style="padding:9px 12px; font-style:italic;">Directeur</td><td style="padding:9px 12px; font-style:italic;">Mensuel</td><td style="padding:9px 12px; font-style:italic;">Taux d'atteinte des objectifs</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:14px 12px; color:var(--text-subtle);">2 à 20</td><td style="padding:14px 12px; color:var(--text-subtle);" colspan="6">À compléter pendant l'épreuve…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:var(--space-4) var(--space-5); box-shadow:var(--shadow-xs);">
+          <summary style="cursor:pointer; font-weight:600; font-size:var(--text-sm); color:var(--text-strong);">Annexe 5 — Objectifs RSE de Cap Horizon (à compléter)</summary>
+          <div style="margin-top:var(--space-4); overflow-x:auto;">
+            <table style="font-size:var(--text-xs); min-width:560px; width:100%; border-collapse:collapse;">
+              <thead><tr style="background:var(--surface-muted);">
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Domaine RSE</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Objectif de l'agence</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Actions envisagées</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Référent</th>
+                <th style="text-align:left; padding:9px 12px; font-weight:700; color:var(--text-strong);">Suivi</th>
+              </tr></thead>
+              <tbody style="color:var(--text-body);">
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px; font-style:italic;">Social / RH (ex.)</td><td style="padding:9px 12px; font-style:italic;">Qualité de vie au travail</td><td style="padding:9px 12px; font-style:italic;">Entretiens réguliers, planning adapté, reconnaissance</td><td style="padding:9px 12px; font-style:italic;">Directeur</td><td style="padding:9px 12px; font-style:italic;">—</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Inclusion</td><td style="padding:14px 12px; color:var(--text-subtle);" colspan="4">À compléter…</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Environnement</td><td style="padding:14px 12px; color:var(--text-subtle);" colspan="4">À compléter…</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Éthique &amp; gouvernance</td><td style="padding:14px 12px; color:var(--text-subtle);" colspan="4">À compléter…</td></tr>
+                <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:9px 12px;">Engagement local</td><td style="padding:14px 12px; color:var(--text-subtle);" colspan="4">À compléter…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+      </div>
+
+      <!-- PLANNING CONSEILLÉ -->
+      <h3 style="margin-top:var(--space-12); font-size:var(--text-lg);">Planning conseillé</h3>
+      <p style="margin-top:var(--space-2); font-size:var(--text-sm); color:var(--text-muted);">Une répartition indicative pour traiter le cas dans le temps de l'épreuve&nbsp;: <strong style="color:var(--text-body);">3h30 au total</strong>.</p>
+      <div style="margin-top:var(--space-4); overflow-x:auto;">
+        <table style="font-size:var(--text-sm); min-width:520px; background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); overflow:hidden;">
+          <thead><tr style="background:var(--surface-navy);">
+            <th style="text-align:left; padding:13px 16px; font-family:var(--font-display); color:#fff; font-size:var(--text-sm);">Partie</th>
+            <th style="text-align:left; padding:13px 16px; font-family:var(--font-display); color:#fff; font-size:var(--text-sm);">Durée</th>
+            <th style="text-align:left; padding:13px 16px; font-family:var(--font-display); color:#fff; font-size:var(--text-sm);">Travail demandé</th>
+          </tr></thead>
+          <tbody>
+            <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:13px 16px; font-weight:600; color:var(--text-strong);">Lecture du sujet &amp; annexes</td><td style="padding:13px 16px; color:var(--color-corail); font-weight:600;">10 min</td><td style="padding:13px 16px; color:var(--text-body);">Surligner contexte, enjeux, profils clients et composition de l'équipe.</td></tr>
+            <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:13px 16px; font-weight:600; color:var(--text-strong);">Dossier 1 · Marketing &amp; com. digitale</td><td style="padding:13px 16px; color:var(--color-corail); font-weight:600;">50 min</td><td style="padding:13px 16px; color:var(--text-body);">SWOT, stratégie de communication, services innovants, indicateurs.</td></tr>
+            <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:13px 16px; font-weight:600; color:var(--text-strong);">Dossier 2 · Management d'équipe &amp; droit</td><td style="padding:13px 16px; color:var(--color-corail); font-weight:600;">1h20</td><td style="padding:13px 16px; color:var(--text-body);">Rites managériaux, obligations RH, motivation, RSE, droit du travail.</td></tr>
+            <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:13px 16px; font-weight:600; color:var(--text-strong);">Dossier 3 · Management commercial</td><td style="padding:13px 16px; color:var(--color-corail); font-weight:600;">50 min</td><td style="padding:13px 16px; color:var(--text-body);">Plan de prospection, services par cible, veilles, CRM/RGPD.</td></tr>
+            <tr style="border-top:1px solid var(--border-subtle);"><td style="padding:13px 16px; font-weight:600; color:var(--text-strong);">Relecture</td><td style="padding:13px 16px; color:var(--color-corail); font-weight:600;">20 min</td><td style="padding:13px 16px; color:var(--text-body);">Vérifier structure, actions, KPI, justification, tableaux.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- LES DOSSIERS -->
+      <h3 style="margin-top:var(--space-12); font-size:var(--text-lg);">Les dossiers à traiter</h3>
+      <div style="margin-top:var(--space-5); display:flex; flex-direction:column; gap:var(--space-5);">
+
+        <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-left:var(--border-accent) solid var(--color-corail); border-radius:var(--radius-md); padding:var(--space-6); box-shadow:var(--shadow-xs);">
+          <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-corail);">Dossier 1 · Marketing &amp; communication digitale</p>
+          <ol style="margin:var(--space-3) 0 0; padding-left:1.2em; font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body); display:flex; flex-direction:column; gap:8px;">
+            <li>Réalisez une <strong>analyse SWOT synthétique</strong> de Cap Horizon à partir du contexte et des annexes 1 à 3. Identifiez les nouvelles attentes des clients et les opportunités locales.</li>
+            <li>Proposez une <strong>stratégie de communication locale et digitale</strong> de repositionnement, déclinée en actions concrètes (réseaux sociaux, site web, partenariats…). Justifiez vos choix d'outils selon les cibles.</li>
+            <li>Proposez un ou plusieurs <strong>services innovants à valeur ajoutée</strong> pour vous différencier des néo-agences.</li>
+            <li>Quels <strong>indicateurs de suivi</strong> mettriez-vous en place pour piloter cette stratégie&nbsp;?</li>
+          </ol>
+        </div>
+
+        <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-left:var(--border-accent) solid var(--color-corail); border-radius:var(--radius-md); padding:var(--space-6); box-shadow:var(--shadow-xs);">
+          <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-corail);">Dossier 2 · Management d'équipe &amp; droit du travail</p>
+          <ol style="margin:var(--space-3) 0 0; padding-left:1.2em; font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body); display:flex; flex-direction:column; gap:8px;">
+            <li>Définissez les <strong>rites managériaux collectifs</strong> à mettre en place (objectifs + indicateurs) pour créer une dynamique entre les différents profils de l'équipe.</li>
+            <li>Rappelez les <strong>obligations RH</strong> applicables à tout agent immobilier (carte professionnelle, formation, déclarations…).</li>
+            <li>Quelles décisions prendriez-vous pour assurer une <strong>veille juridique</strong> régulière&nbsp;?</li>
+            <li>Proposez <strong>plusieurs actions d'animation</strong> favorisant communication, cohésion et valeurs RSE, en précisant leur fréquence. Synthétisez-les dans les <strong>annexes 4 et 5</strong> (selon qu'elles relèvent ou non de la RSE).</li>
+            <li>Pour chaque préconisation, présentez l'intérêt pour les collaborateurs en mobilisant une <strong>théorie de la motivation</strong> au travail, et expliquez sa mise en œuvre.</li>
+            <li><strong>Droit du travail&nbsp;:</strong> rappelez la distinction entre une <strong>sanction disciplinaire</strong> et une <strong>mesure conservatoire</strong> (définition + exemple). Puis, à partir d'une situation de votre choix au sein de l'agence, illustrez un cas où la responsabilité de l'employeur pourrait être engagée et précisez les démarches à anticiper.</li>
+          </ol>
+        </div>
+
+        <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-left:var(--border-accent) solid var(--color-corail); border-radius:var(--radius-md); padding:var(--space-6); box-shadow:var(--shadow-xs);">
+          <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-corail);">Dossier 3 · Management commercial</p>
+          <ol style="margin:var(--space-3) 0 0; padding-left:1.2em; font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body); display:flex; flex-direction:column; gap:8px;">
+            <li>Construisez un <strong>plan d'action de prospection</strong> sur les différentes zones de Nantes, produits et profils de clientèle (annexe 3). Précisez pour chaque axe : analyse du secteur, profils de clients, canaux de prospection, implication de l'équipe.</li>
+            <li>Quels <strong>services complémentaires à forte valeur ajoutée</strong> proposer&nbsp;? Argumentez en distinguant quelques grands types de clientèle (par exemple investisseurs, locataires, primo-accédants…) et leurs attentes.</li>
+            <li>Détaillez les <strong>différentes veilles</strong> à mener régulièrement pour rester compétitif (objectifs et moyens).</li>
+            <li>Comment exploiteriez-vous les <strong>données de votre CRM</strong> (réseaux, veille locale) dans le <strong>respect du RGPD</strong> pour mieux connaître prospects et clients, personnaliser vos actions et optimiser la relation client&nbsp;? Donnez des exemples d'actions et d'indicateurs.</li>
+          </ol>
+        </div>
+
+      </div>
+
+      <div style="margin-top:var(--space-8); background:var(--surface-corail-wash); border-radius:var(--radius-lg); padding:var(--space-6) var(--space-8);">
+        <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-corail-vif);">Règle d'or</p>
+        <p style="margin-top:var(--space-3); font-size:var(--text-md); line-height:var(--leading-relaxed); color:var(--text-strong); font-family:var(--font-display); font-weight:500;">Une réponse sans action concrète, ni indicateur, ni justification perd beaucoup de valeur. Écrivez comme un futur responsable d'agence.</p>
+      </div>
+
+      <h3 style="margin-top:var(--space-12); font-size:var(--text-lg);">Corrigé méthodologique</h3>
+      <p style="margin-top:var(--space-2); font-size:var(--text-sm); color:var(--text-muted);">Traitez d'abord chaque dossier, puis révélez les repères de correction un à un.</p>
+      <div style="margin-top:var(--space-6);">
+        <sc-for list="{{ examRevealed }}" as="step" hint-placeholder-count="0">
+          <div style="margin-bottom:var(--space-4); background:var(--surface-card); border:1px solid var(--border-subtle); border-left:var(--border-accent) solid var(--color-corail); border-radius:var(--radius-md); padding:var(--space-5) var(--space-6); box-shadow:var(--shadow-xs);">
+            <p style="font-size:var(--text-2xs); text-transform:uppercase; letter-spacing:var(--tracking-caps); font-weight:700; color:var(--color-corail);">{{ step.label }}</p>
+            <p style="margin-top:8px; font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-body);">{{ step.text }}</p>
+          </div>
+        </sc-for>
+        <div style="display:flex; align-items:center; gap:var(--space-4); flex-wrap:wrap;">
+          <sc-if value="{{ examHasMore }}" hint-placeholder-val="{{ true }}">
+            <button onClick="{{ revealExam }}" style="font-family:var(--font-body); font-weight:700; font-size:var(--text-sm); color:#fff; background:var(--color-bleu-nuit); border:none; border-radius:var(--radius-pill); padding:12px 24px; cursor:pointer;">{{ examBtnLabel }}</button>
+          </sc-if>
+          <span style="font-size:var(--text-sm); color:var(--text-muted);">{{ examProgressLabel }}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section id="checklist" style="background:var(--surface-navy); position:relative; overflow:hidden;">
+      <img src="assets/logo/sigle-white.png" alt="" aria-hidden="true" style="position:absolute; bottom:-150px; right:-110px; width:480px; height:auto; opacity:0.06; pointer-events:none;">
+      <div style="position:relative; max-width:var(--container-md); margin:0 auto; padding:var(--space-24) var(--space-6);">
+        <p style="font-size:var(--text-sm); font-weight:700; letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--color-corail-clair);">Dernière ligne droite</p>
+        <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-6); flex-wrap:wrap;">
+          <h2 style="margin-top:var(--space-4); color:#fff; font-size:var(--text-3xl); line-height:var(--leading-tight); letter-spacing:var(--tracking-tight);">Ce que je dois savoir faire le jour J.</h2>
+          <span style="font-family:var(--font-display); font-weight:700; font-size:var(--text-xl); color:#fff;">{{ checklistDone }}<span style="color:var(--text-on-navy-muted); font-size:var(--text-md);">/{{ checklistTotal }}</span></span>
+        </div>
+        <div style="margin-top:var(--space-8); display:flex; flex-direction:column; gap:10px;">
+          <sc-for list="{{ checklist }}" as="item" hint-placeholder-count="10">
+            <button onClick="{{ item.onToggle }}" style="{{ item.style }}">
+              <span style="{{ item.boxStyle }}">{{ item.check }}</span>
+              <span style="flex:1; text-align:left; font-size:var(--text-sm); line-height:var(--leading-normal); color:{{ item.textColor }};">{{ item.label }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="background:var(--surface-muted); border-top:1px solid var(--border-subtle);">
+    <div style="max-width:var(--container-xl); margin:0 auto; padding:var(--space-12) var(--space-6); display:flex; align-items:center; justify-content:space-between; gap:var(--space-8); flex-wrap:wrap;">
+      <div style="display:flex; align-items:center; gap:var(--space-5);">
+        <x-import component-from-global-scope="MAJUBAHConsultingDesignSystem_a0b600.Logo" variant="horizontal" height="{{ 26 }}" hint-size="130px,26px"></x-import>
+        <span style="font-size:var(--text-sm); color:var(--text-muted);">Campus numérique privé · MAJUBAH Consulting</span>
+      </div>
+      <div style="display:flex; gap:var(--space-6); font-size:var(--text-sm); color:var(--text-muted);">
+        <a href="index.html" style-hover="color:var(--color-bleu-nuit);">Accueil</a>
+        <a href="Modules.dc.html" style-hover="color:var(--color-bleu-nuit);">Modules</a>
+        <a href="A-propos.dc.html" style-hover="color:var(--color-bleu-nuit);">À propos</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.KEY = 'majubah-campus:bachelor-management-commercial';
+    this.QUIZ = [
+      { id:'q1', theme:'Méthode', question:"Que doit contenir une bonne action dans une étude de cas ?", choices:["Une cible, une action, une fréquence, un responsable et un KPI","Une citation et une définition","Une longue phrase d'introduction","Une couleur de logo"], answer:0, explanation:"Une action gagnante précise toujours la cible, l'action, le responsable, la fréquence et l'indicateur de suivi." },
+      { id:'q2', theme:'Méthode', question:"Par quoi commencer une réponse d'étude de cas ?", choices:["Par le cours appris par cœur","Par un constat tiré directement du sujet","Par la conclusion","Par une opinion personnelle"], answer:1, explanation:"On part d'un constat issu du sujet et des annexes, puis on formule un objectif et des actions." },
+      { id:'q3', theme:'Prospection', question:"Quel indicateur mesure l'efficacité d'une campagne de prise de mandats ?", choices:["Le nombre de pages du dossier","Le taux de transformation contacts / rendez-vous / mandats","La couleur des affiches","Le nombre de réunions internes"], answer:1, explanation:"On suit l'entonnoir : contacts → rendez-vous → mandats signés, et le taux de transformation." },
+      { id:'q4', theme:'Prospection', question:"Quel élément manque dans un plan de prospection incomplet ?", choices:["Une cible précise","Une citation","Une phrase très longue","Une marge de page"], answer:0, explanation:"Sans cible précise (zone + profil), le plan n'est pas opérationnel ni mesurable." },
+      { id:'q5', theme:'Segmentation', question:"Pourquoi segmenter les clients ?", choices:["Pour allonger les réponses","Pour adapter les services, le discours et les canaux","Pour éviter de prospecter","Pour réduire le CRM"], answer:1, explanation:"La segmentation permet d'adapter l'offre, l'argumentaire et le canal à chaque profil." },
+      { id:'q6', theme:'Services', question:"Quel service proposer en priorité à un investisseur ?", choices:["Un home staging gratuit","Gestion locative, rentabilité et fiscalité","Une simple visite","Une réduction de prix"], answer:1, explanation:"L'investisseur cherche du rendement : gestion locative, rentabilité et conseil fiscal créent de la valeur." },
+      { id:'q7', theme:'Services', question:"Qu'est-ce qu'un service à valeur ajoutée ?", choices:["Un service identique aux concurrents","Une prestation qui répond à un besoin au-delà de la transaction","Une baisse de commission","Une publicité"], answer:1, explanation:"Il répond à un besoin réel du client et renforce la relation au-delà de la simple transaction." },
+      { id:'q8', theme:'CRM', question:"À quoi sert l'historique de contact dans un CRM ?", choices:["À archiver sans usage","À personnaliser les relances et prioriser les prospects","À envoyer des messages identiques","À supprimer des clients"], answer:1, explanation:"L'historique permet de prioriser les prospects chauds et de personnaliser chaque relance." },
+      { id:'q9', theme:'CRM', question:"Que permet le suivi de l'origine du lead ?", choices:["Mesurer les canaux efficaces et réallouer les efforts","Changer le logo","Augmenter les prix","Supprimer la prospection"], answer:0, explanation:"Connaître l'origine des leads permet d'investir sur les canaux les plus performants." },
+      { id:'q10', theme:'RGPD', question:"Quelle règle respecter lors de la collecte de données ?", choices:["Collecter le plus de données possible","Limiter la collecte au nécessaire et informer la personne","Revendre les données","Conserver indéfiniment"], answer:1, explanation:"Principe de minimisation : on ne collecte que le nécessaire et on informe la personne." },
+      { id:'q11', theme:'RGPD', question:"Que faire des données clients dans la durée ?", choices:["Les conserver pour toujours","Limiter leur durée de conservation","Les diffuser publiquement","Les copier hors du CRM"], answer:1, explanation:"La durée de conservation doit être limitée à la finalité du traitement." },
+      { id:'q12', theme:'Veille', question:"Quel est l'objectif de la veille concurrentielle ?", choices:["Copier les concurrents","Identifier offres, prix, avis et différenciants","Ignorer le marché","Baisser ses prix"], answer:1, explanation:"La veille concurrentielle éclaire le positionnement : offres, prix, avis, différenciants." },
+      { id:'q13', theme:'Veille', question:"Combien de veilles utiles une agence organise-t-elle ?", choices:["Une seule","Deux","Quatre (concurrentielle, marché, juridique, technologique)","Dix"], answer:2, explanation:"Quatre veilles complémentaires : concurrentielle, marché, juridique/réglementaire et technologique." },
+      { id:'q14', theme:'Management', question:"Pourquoi instaurer une réunion commerciale hebdomadaire ?", choices:["Pour occuper l'équipe","Pour aligner l'équipe, suivre les objectifs et traiter les blocages","Pour réduire les ventes","Pour éviter les clients"], answer:1, explanation:"Le rite hebdomadaire aligne l'équipe, suit les objectifs et lève les blocages." },
+      { id:'q15', theme:'Management', question:"À quoi sert la méthode DISC ?", choices:["À calculer un loyer","À adapter son management aux profils de personnalité","À fixer les prix","À gérer le RGPD"], answer:1, explanation:"DISC aide à adapter sa communication et son management aux différents profils." },
+      { id:'q16', theme:'Motivation', question:"Quelle action répond au besoin de reconnaissance ?", choices:["Sanctionner les erreurs","Valoriser les réussites et donner du feedback positif","Supprimer les primes","Ignorer les résultats"], answer:1, explanation:"Reconnaître et valoriser les réussites répond au besoin de reconnaissance (Maslow / Herzberg)." },
+      { id:'q17', theme:'Motivation', question:"Quelle théorie hiérarchise les besoins ?", choices:["La pyramide de Maslow","La matrice BCG","Le modèle SWOT","La méthode SONCAS"], answer:0, explanation:"La pyramide de Maslow hiérarchise les besoins, de la sécurité à l'accomplissement." },
+      { id:'q18', theme:'RSE', question:"Quelle action relève de l'inclusion ?", choices:["Augmenter les prix","Adapter le poste d'un collaborateur en situation de handicap","Réduire les congés","Supprimer les réunions"], answer:1, explanation:"Adapter le poste ou l'organisation pour un collaborateur en situation de handicap relève de l'inclusion." },
+      { id:'q19', theme:'RSE', question:"Quelle action relève de l'environnement ?", choices:["Réduire les impressions et passer à la signature électronique","Imprimer chaque document en double","Multiplier les déplacements","Jeter les anciens dossiers"], answer:0, explanation:"Réduire les impressions et dématérialiser (signature électronique) limite l'empreinte environnementale." },
+      { id:'q20', theme:'Méthode', question:"Que vérifier en relecture le jour J ?", choices:["La couleur du stylo","Structure, actions, KPI, justification et tableaux","Le nombre de mots exact","La marge gauche uniquement"], answer:1, explanation:"En relecture on vérifie que chaque réponse a une structure, des actions, des KPI et une justification." },
+    ];
+    this.FICHES = [
+      { num:1, title:"Comprendre une étude de cas certifiante", summary:"L'étude de cas évalue votre capacité à analyser une situation réelle d'agence et à proposer des réponses structurées, opérationnelles et justifiées.", points:["Lire l'intégralité du sujet et des annexes avant de répondre","Repérer contexte, enjeux, contraintes et profils","Répondre en consultant : décider et justifier, pas réciter","S'appuyer sur les données du cas, pas des généralités"], example:"Face à une agence qui perd des mandats, on attend un plan d'action chiffré, pas une définition de la prospection." },
+      { num:2, title:"Construire un diagnostic rapide d'agence", summary:"Avant d'agir, posez un diagnostic clair : forces, faiblesses, menaces concurrentielles et opportunités du secteur.", points:["Analyser le portefeuille de mandats et le chiffre d'affaires","Mesurer la pression concurrentielle (digital, réseaux)","Évaluer l'équipe : effectif, compétences, organisation","Formuler 2 à 3 enjeux prioritaires"], example:"« L'agence subit une concurrence digitale et doit reconquérir des mandats sur son secteur. »" },
+      { num:3, title:"Bâtir un plan d'action de prospection", summary:"Un plan de prospection précise toujours la cible, le canal, l'action, la fréquence et l'indicateur de suivi.", points:["Segmenter par zone et par cible","Combiner plusieurs canaux (portails, réseaux, terrain, phoning)","Définir un responsable et une fréquence","Suivre un KPI : contacts, RDV, mandats"], example:"Quartier résidentiel → familles → réseaux sociaux + terrain → estimation offerte → hebdomadaire → RDV estimation." },
+      { num:4, title:"Segmenter les profils clients et adapter son discours", summary:"Segmenter permet d'adapter les services, le discours et les canaux à chaque profil client.", points:["Distinguer primo-accédants, investisseurs, vendeurs, bailleurs","Adapter l'argumentaire au besoin réel","Choisir le bon canal par segment","Personnaliser l'offre"], example:"À un investisseur : rentabilité et gestion locative. À un primo-accédant : accompagnement et financement." },
+      { num:5, title:"Proposer des services additionnels à valeur ajoutée", summary:"Au-delà de la transaction, proposez des services qui répondent à un besoin et renforcent la relation.", points:["Gestion locative, assurance loyers impayés","Conseil fiscal et rentabilité pour l'investisseur","Home staging, diagnostics, accompagnement financement","Mesurer l'impact sur la fidélisation"], example:"Proposer la gestion locative à un investisseur sécurise un revenu récurrent pour l'agence." },
+      { num:6, title:"Exploiter les données CRM dans le respect du RGPD", summary:"Le CRM sert à personnaliser les relances et prioriser les prospects, dans le respect des règles RGPD.", points:["Exploiter l'historique pour prioriser les prospects chauds","Mesurer l'origine des leads pour réallouer les efforts","Limiter la collecte aux données nécessaires","Informer la personne et limiter la conservation"], example:"Relancer un prospect « chaud » grâce à son historique, sans conserver de données inutiles." },
+      { num:7, title:"Organiser les quatre veilles utiles à une agence", summary:"Une agence performante organise quatre veilles complémentaires pour rester compétitive.", points:["Concurrentielle : offres, prix, avis, différenciants","Marché : prix, volumes, tendances locales","Juridique et réglementaire","Technologique et digitale"], example:"La veille concurrentielle repère une agence qui casse les prix, pour ajuster son positionnement." },
+      { num:8, title:"Animer une équipe commerciale", summary:"L'animation repose sur des rites managériaux clairs : aligner, suivre, motiver.", points:["Réunion commerciale hebdomadaire de suivi","Point individuel mensuel","Reconnaissance des réussites","Objectifs clairs et challenges équilibrés"], example:"Une réunion hebdomadaire aligne l'équipe, suit les objectifs et traite les blocages." },
+      { num:9, title:"Intégrer inclusion, handicap, temps partiel et RSE", summary:"Un management responsable adapte l'organisation et intègre les enjeux sociaux et environnementaux.", points:["Adapter le poste d'un collaborateur en situation de handicap","Organiser le temps partiel thérapeutique","Charte relation client responsable","Réduire l'empreinte (signature électronique)"], example:"Adapter le poste du gestionnaire locatif en situation de handicap relève de l'inclusion." },
+      { num:10, title:"Mobiliser les théories de la motivation", summary:"Mobilisez une théorie pour justifier vos actions d'animation d'équipe.", points:["Maslow : hiérarchie des besoins","Herzberg : facteurs de motivation / hygiène","Reconnaissance et feedback","Sens et autonomie"], example:"Valoriser les réussites répond au besoin de reconnaissance (Maslow / Herzberg)." },
+      { num:11, title:"Remplir un tableau d'actions managériales", summary:"Présentez vos actions sous forme de tableau : action, objectif, format, responsable, fréquence, suivi.", points:["Une ligne = une action concrète","Toujours un objectif mesurable","Un responsable et une fréquence","Un indicateur de suivi"], example:"Réunion hebdo · aligner l'équipe · présentiel · directeur · hebdomadaire · taux d'atteinte des objectifs." },
+      { num:12, title:"Réussir la copie le jour J", summary:"Le jour J, la structure et la justification font la différence.", points:["Constat → objectif → action → responsable → fréquence → KPI","Justifier par performance, qualité, client, équipe, conformité","Soigner les tableaux et annexes","Relire : structure, actions, KPI, justification"], example:"« Une réponse sans action concrète, ni indicateur, ni justification perd beaucoup de valeur. »" },
+    ];
+    this.VIDEOS = [
+      { title:"Les fondamentaux du management d'équipe", embed:"https://app.heygen.com/embeds/e8f57e013cab4e1b904e48983c959c83" },
+      { title:"Réaliser un diagnostic commercial", embed:"https://app.heygen.com/embeds/3b41d3145d45468ab55b3c063f129e6e" },
+      { title:"Segmenter sa clientèle", embed:"https://app.heygen.com/embeds/5bf536a5adb84b88b59f9822888ffac7" },
+      { title:"Définir ses objectifs SMART", embed:"https://app.heygen.com/embeds/426c8eaf22b744d488094e5dceb10d01" },
+      { title:"Construire son plan de prospection immobilière", embed:"https://app.heygen.com/embeds/d4688d776ee94248b8fe28c262711edd" },
+      { title:"Organiser la veille commerciale immobilière", embed:"https://app.heygen.com/embeds/84ad9ab5f9e64945bbe578a6f027b453" },
+      { title:"Animer une équipe et intégrer les valeurs RSE", embed:"https://app.heygen.com/embeds/5bc938c33f2344368d896f0fe109f175" },
+      { title:"Comment exploiter efficacement un CRM avec le RGPD", embed:"https://app.heygen.com/embeds/9bd5304e6db241a8929f854b3d985841" },
+      { title:"L'art de motiver son équipe", embed:"https://app.heygen.com/embeds/1f6cd449f2d246609176cb2a9707a800" },
+      { title:"Piloter une agence immobilière avec des KPI", embed:"https://app.heygen.com/embeds/a3b5346b90f2493c87c0bd96759dc5f5" },
+    ];
+    this.CHECKLIST = [
+      { id:'c1', label:"Lire le sujet et surligner contexte, enjeux et contraintes en 10 minutes" },
+      { id:'c2', label:"Structurer chaque réponse : constat, objectif, action, responsable, fréquence, KPI" },
+      { id:'c3', label:"Construire un plan de prospection multicanal crédible" },
+      { id:'c4', label:"Segmenter les clients et proposer des services à valeur ajoutée" },
+      { id:'c5', label:"Exploiter les données CRM dans le respect du RGPD" },
+      { id:'c6', label:"Citer les quatre veilles utiles à une agence" },
+      { id:'c7', label:"Proposer des rites managériaux avec objectif et fréquence" },
+      { id:'c8', label:"Mobiliser une théorie de la motivation adaptée" },
+      { id:'c9', label:"Intégrer inclusion, handicap, temps partiel et RSE" },
+      { id:'c10', label:"Justifier chaque action par une logique professionnelle" },
+    ];
+    this.EXAM_STEPS = [
+      { label:'Corrigé · Lecture du sujet', text:"Repérez les 2 à 3 enjeux majeurs et les annexes exploitables avant d'écrire. Surlignez les profils clients (étudiants, jeunes actifs, primo-accédants, investisseurs) et la composition de l'équipe de Cap Horizon." },
+      { label:'Corrigé · Dossier 1 — Marketing & com. digitale', text:"Un SWOT structuré appuyé sur les annexes, une stratégie de communication déclinée en actions (réseaux, site, partenariats locaux), 1 à 2 services innovants différenciants, et des indicateurs de suivi mesurables." },
+      { label:"Corrigé · Dossier 2 — Management d'équipe & droit", text:"Des rites managériaux (objectif + indicateur), les obligations RH (carte pro, formation), une veille juridique, plusieurs actions d'animation classées RSE/non-RSE, une théorie de la motivation mobilisée. Droit : distinction sanction disciplinaire / mesure conservatoire, et un cas où la responsabilité de l'employeur peut être engagée." },
+      { label:'Corrigé · Dossier 3 — Management commercial', text:"Un tableau de prospection (zone / cible / canal / action / fréquence / KPI), des services additionnels par type de clientèle, les veilles utiles, et l'exploitation du CRM avec précautions RGPD." },
+      { label:'Corrigé · Relecture', text:"Chaque réponse doit contenir une action concrète, un indicateur et une justification. Vérifiez la cohérence des tableaux (annexes 4 et 5) et la logique professionnelle." },
+    ];
+    this.EX_IDS = ['diagnostic','prospection','services','crm','mgmtrse'];
+    this.state = this.loadState();
+  }
+
+  loadState() {
+    const def = { methodeRead:false, answers:{}, checked:{}, fichesOpen:{}, exercises:{}, examReveal:0, checklist:{} };
+    try {
+      const raw = localStorage.getItem(this.KEY);
+      if (raw) return Object.assign(def, JSON.parse(raw));
+    } catch(e) {}
+    return def;
+  }
+  save() {
+    try {
+      const s = this.state;
+      localStorage.setItem(this.KEY, JSON.stringify({ methodeRead:s.methodeRead, answers:s.answers, checked:s.checked, exercises:s.exercises, examReveal:s.examReveal, checklist:s.checklist }));
+    } catch(e) {}
+  }
+  patch(updater) { this.setState(updater, () => this.save()); }
+
+  // ---- quiz ----
+  selectChoice(qid, idx) {
+    if (this.state.checked[qid]) return;
+    this.patch(s => ({ answers: Object.assign({}, s.answers, { [qid]: idx }) }));
+  }
+  validate(qid) {
+    if (this.state.answers[qid] == null) return;
+    this.patch(s => ({ checked: Object.assign({}, s.checked, { [qid]: true }) }));
+  }
+  quizStats() {
+    let answered = 0, correct = 0;
+    const themeCorrect = {};
+    this.QUIZ.forEach(q => {
+      if (this.state.checked[q.id]) {
+        answered++;
+        const ok = this.state.answers[q.id] === q.answer;
+        if (ok) correct++;
+        themeCorrect[q.theme] = themeCorrect[q.theme] || { total:0, ok:0 };
+      }
+    });
+    // theme stats over all questions of a theme (need all correct)
+    const byTheme = {};
+    this.QUIZ.forEach(q => {
+      byTheme[q.theme] = byTheme[q.theme] || { total:0, ok:0 };
+      byTheme[q.theme].total++;
+      if (this.state.checked[q.id] && this.state.answers[q.id] === q.answer) byTheme[q.theme].ok++;
+    });
+    return { answered, correct, byTheme };
+  }
+
+  // ---- exercises ----
+  setExText(id, val) {
+    this.patch(s => ({ exercises: Object.assign({}, s.exercises, { [id]: Object.assign({}, s.exercises[id], { text: val }) }) }));
+  }
+  toggleEx(id) {
+    this.patch(s => ({ exercises: Object.assign({}, s.exercises, { [id]: Object.assign({ text:'' }, s.exercises[id], { revealed: !(s.exercises[id] && s.exercises[id].revealed) }) }) }));
+  }
+
+  toggleFiche(idx) {
+    this.patch(s => ({ fichesOpen: Object.assign({}, s.fichesOpen, { [idx]: !s.fichesOpen[idx] }) }));
+  }
+  toggleMethode() { this.patch(s => ({ methodeRead: !s.methodeRead })); }
+  revealExam() { this.patch(s => ({ examReveal: Math.min(this.EXAM_STEPS.length, s.examReveal + 1) })); }
+  toggleCheck(id) { this.patch(s => ({ checklist: Object.assign({}, s.checklist, { [id]: !s.checklist[id] }) })); }
+  resetProgress() {
+    if (typeof confirm === 'function' && !confirm("Réinitialiser toute votre progression sur ce module ?")) return;
+    this.patch(() => ({ methodeRead:false, answers:{}, checked:{}, fichesOpen:{}, exercises:{}, examReveal:0, checklist:{} }));
+  }
+
+  computeLevels(stats) {
+    const prospOk = stats.byTheme['Prospection'] && stats.byTheme['Prospection'].ok === stats.byTheme['Prospection'].total;
+    const crmOk = stats.byTheme['CRM'] && stats.byTheme['CRM'].ok === stats.byTheme['CRM'].total;
+    const rgpdOk = stats.byTheme['RGPD'] && stats.byTheme['RGPD'].ok === stats.byTheme['RGPD'].total;
+    const mgmtDone = this.state.exercises['mgmtrse'] && this.state.exercises['mgmtrse'].revealed;
+    const examDone = this.state.examReveal >= this.EXAM_STEPS.length;
+    const ready = stats.correct >= 16;
+    return [
+      { n:1, name:'Découverte', cond:"Lire la méthode d'épreuve", unlocked: !!this.state.methodeRead },
+      { n:2, name:'Commercial junior', cond:'Réussir le quiz prospection', unlocked: !!prospOk },
+      { n:3, name:'Analyste CRM', cond:'Réussir le quiz data / RGPD', unlocked: !!(crmOk && rgpdOk) },
+      { n:4, name:"Manager d'équipe", cond:'Compléter l\'exercice management / RSE', unlocked: !!mgmtDone },
+      { n:5, name:"Responsable d'agence", cond:"Faire l'examen blanc", unlocked: !!examDone },
+      { n:6, name:"Prêt pour l'épreuve", cond:'Obtenir 80 % ou plus aux quiz', unlocked: !!ready },
+    ];
+  }
+
+  renderVals() {
+    const s = this.state;
+    const now = new Date();
+    let target = new Date(now.getFullYear(), 6, 8);
+    if (target < now) target = new Date(now.getFullYear() + 1, 6, 8);
+
+    const stats = this.quizStats();
+    const levels = this.computeLevels(stats);
+    const unlockedCount = levels.filter(l => l.unlocked).length;
+    const progressPct = Math.round((unlockedCount / 6) * 100);
+
+    const levelsVM = levels.map(l => ({
+      badge: l.unlocked ? '★' : l.n,
+      name: l.name,
+      cond: l.cond,
+      status: l.unlocked ? 'Débloqué' : 'À débloquer',
+      cardBg: l.unlocked ? 'var(--surface-corail-wash)' : 'var(--surface-card)',
+      cardBorder: l.unlocked ? 'var(--color-saumon)' : 'var(--border-subtle)',
+      iconBg: l.unlocked ? 'var(--color-corail)' : 'var(--surface-sunken)',
+      iconColor: l.unlocked ? '#fff' : 'var(--text-subtle)',
+      statusColor: l.unlocked ? 'var(--color-corail-vif)' : 'var(--text-subtle)',
+      nameColor: l.unlocked ? 'var(--color-bleu-nuit)' : 'var(--text-strong)',
+    }));
+
+    // quiz VM
+    const optBase = "display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:13px 16px;border-radius:10px;border:1.5px solid var(--border-subtle);background:var(--surface-card);font-family:var(--font-body);font-size:0.9375rem;color:var(--text-strong);transition:border-color .18s,background .18s;";
+    const quiz = this.QUIZ.map((q, qi) => {
+      const sel = s.answers[q.id];
+      const checked = !!s.checked[q.id];
+      const choices = q.choices.map((label, ci) => {
+        let st = optBase;
+        const isSel = sel === ci;
+        const isCorrect = q.answer === ci;
+        if (!checked) { st += isSel ? "border-color:var(--color-bleu-nuit);background:var(--surface-bleu-wash);cursor:pointer;" : "cursor:pointer;"; }
+        else {
+          st += "cursor:default;";
+          if (isCorrect) st += "border-color:var(--color-success);background:var(--color-success-bg);color:#1c5340;font-weight:700;";
+          else if (isSel) st += "border-color:var(--color-danger);background:var(--color-danger-bg);color:#8f2414;";
+          else st += "opacity:.55;";
+        }
+        let mark = '';
+        if (checked) { if (isCorrect) mark = '✓'; else if (isSel) mark = '✗'; }
+        return { label, style: st, mark, onClick: () => this.selectChoice(q.id, ci) };
+      });
+      const isOk = checked && sel === q.answer;
+      return {
+        num: (qi + 1) + '.', theme: q.theme, question: q.question, choices,
+        showValidate: sel != null && !checked,
+        checked,
+        onValidate: () => this.validate(q.id),
+        explanation: q.explanation,
+        feedbackTitle: isOk ? 'Bonne réponse' : 'À revoir',
+        feedbackColor: isOk ? 'var(--color-success)' : 'var(--color-danger)',
+        feedbackStyle: "margin-top:16px;padding:14px 16px;border-radius:10px;background:" + (isOk ? 'var(--color-success-bg)' : 'var(--color-danger-bg)') + ";",
+      };
+    });
+
+    // fiches VM
+    const fiches = this.FICHES.map((f, i) => ({
+      num: f.num, title: f.title, summary: f.summary, points: f.points, example: f.example,
+      open: !!s.fichesOpen[i],
+      iconRotate: s.fichesOpen[i] ? 'rotate(45deg)' : 'rotate(0deg)',
+      onToggle: () => this.toggleFiche(i),
+    }));
+
+    // exercises flat keys
+    const out = {};
+    this.EX_IDS.forEach(id => {
+      const st = s.exercises[id] || { text:'', revealed:false };
+      out['ex_'+id+'_text'] = st.text || '';
+      out['ex_'+id+'_revealed'] = !!st.revealed;
+      out['ex_'+id+'_label'] = st.revealed ? 'Masquer le corrigé' : 'Voir le corrigé';
+      out['ex_'+id+'_input'] = (e) => this.setExText(id, e.target.value);
+      out['ex_'+id+'_toggle'] = () => this.toggleEx(id);
+    });
+
+    // exam
+    const examRevealed = this.EXAM_STEPS.slice(0, s.examReveal);
+    const examHasMore = s.examReveal < this.EXAM_STEPS.length;
+    const examBtnLabel = s.examReveal === 0 ? "Afficher le corrigé étape par étape" : "Étape de corrigé suivante";
+    const examProgressLabel = examHasMore ? (s.examReveal + ' / ' + this.EXAM_STEPS.length + ' étapes affichées') : "Corrigé complet · examen blanc terminé";
+
+    // checklist VM
+    const boxBase = "flex:none;width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;";
+    const checklist = this.CHECKLIST.map(it => {
+      const on = !!s.checklist[it.id];
+      return {
+        label: it.label,
+        check: on ? '✓' : '',
+        textColor: on ? '#fff' : 'var(--text-on-navy)',
+        boxStyle: boxBase + (on ? "background:var(--color-corail);color:#fff;" : "background:rgba(255,255,255,0.08);border:1.5px solid var(--border-on-navy);color:transparent;"),
+        style: "display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:rgba(255,255,255,0.04);border:1px solid var(--border-on-navy);border-radius:12px;padding:14px 18px;cursor:pointer;font-family:var(--font-body);transition:background .18s;",
+        onToggle: () => this.toggleCheck(it.id),
+      };
+    });
+    const checklistDone = this.CHECKLIST.filter(it => s.checklist[it.id]).length;
+
+    return Object.assign(out, {
+      progressPct, unlockedCount,
+      levels: levelsVM,
+      methodeBtnLabel: s.methodeRead ? '✓ Méthode lue' : "J'ai lu la méthode",
+      methodeBtnStyle: "font-family:var(--font-body);font-weight:700;font-size:0.875rem;border-radius:999px;padding:11px 24px;cursor:pointer;border:1.5px solid " + (s.methodeRead ? 'var(--color-success)' : 'rgba(255,255,255,0.5)') + ";background:" + (s.methodeRead ? 'var(--color-success-bg)' : 'transparent') + ";color:" + (s.methodeRead ? '#1c5340' : '#fff') + ";",
+      methodeHint: s.methodeRead ? "Niveau 1 débloqué." : "Marquez la méthode comme lue pour débloquer le niveau 1.",
+      toggleMethode: () => this.toggleMethode(),
+      fiches,
+      videos: this.VIDEOS,
+      quiz,
+      quizAnswered: stats.answered,
+      quizCorrect: stats.correct,
+      examRevealed, examHasMore, examBtnLabel, examProgressLabel,
+      revealExam: () => this.revealExam(),
+      checklist, checklistDone, checklistTotal: this.CHECKLIST.length,
+      resetProgress: () => this.resetProgress(),
+    });
+  }
+}
+</script>
+</body>
+</html>
