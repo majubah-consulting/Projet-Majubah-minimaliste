@@ -59,13 +59,17 @@
     <input id="code" type="password" placeholder="Code formateur" autocomplete="off">
     <p class="msg" id="msg"></p>
     <button id="go">Voir le tableau de bord</button>
+    <p style="margin-top:14px;"><a href="index.html" style="color:var(--muted); font-size:13px; text-decoration:underline;">← Retour à l'accueil</a></p>
   </div>
 
   <!-- Tableau -->
   <div id="dash" class="wrap hide">
     <div class="toolbar">
       <div class="sub" id="count"></div>
-      <button class="small" id="refresh">Actualiser</button>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a href="index.html" class="small" style="display:inline-block; padding:8px 16px; border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--navy); text-decoration:none; font-weight:600;">← Accueil</a>
+        <button class="small" id="refresh">Actualiser</button>
+      </div>
     </div>
     <div style="overflow-x:auto;">
       <table>

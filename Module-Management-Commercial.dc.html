@@ -285,6 +285,10 @@
           </div>
         </sc-for>
       </div>
+      <div style="margin-top:var(--space-8); display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center;">
+        <button onClick="{{ newQuiz }}" style="font-family:var(--font-body); font-weight:700; font-size:var(--text-sm); color:var(--color-bleu-nuit); background:var(--surface-bleu-wash); border:1.5px solid var(--color-bleu-acier); border-radius:var(--radius-pill); padding:12px 26px; cursor:pointer;">↻ Générer un nouveau quiz</button>
+        <p style="font-size:var(--text-xs); color:var(--text-muted);">20 questions tirées au hasard parmi notre banque de 40. Votre score actuel repart à zéro.</p>
+      </div>
     </section>
 
     <!-- EXERCICES -->
@@ -678,7 +682,7 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     this.KEY = 'majubah-campus:bachelor-management-commercial';
-    this.QUIZ = [
+    this.QUIZ_BANK = [
       { id:'q1', theme:'Méthode', question:"Que doit contenir une bonne action dans une étude de cas ?", choices:["Une cible, une action, une fréquence, un responsable et un KPI","Une citation et une définition","Une longue phrase d'introduction","Une couleur de logo"], answer:0, explanation:"Une action gagnante précise toujours la cible, l'action, le responsable, la fréquence et l'indicateur de suivi." },
       { id:'q2', theme:'Méthode', question:"Par quoi commencer une réponse d'étude de cas ?", choices:["Par le cours appris par cœur","Par un constat tiré directement du sujet","Par la conclusion","Par une opinion personnelle"], answer:1, explanation:"On part d'un constat issu du sujet et des annexes, puis on formule un objectif et des actions." },
       { id:'q3', theme:'Prospection', question:"Quel indicateur mesure l'efficacité d'une campagne de prise de mandats ?", choices:["Le nombre de pages du dossier","Le taux de transformation contacts / rendez-vous / mandats","La couleur des affiches","Le nombre de réunions internes"], answer:1, explanation:"On suit l'entonnoir : contacts → rendez-vous → mandats signés, et le taux de transformation." },
@@ -699,6 +703,26 @@ class Component extends DCLogic {
       { id:'q18', theme:'RSE', question:"Quelle action relève de l'inclusion ?", choices:["Augmenter les prix","Adapter le poste d'un collaborateur en situation de handicap","Réduire les congés","Supprimer les réunions"], answer:1, explanation:"Adapter le poste ou l'organisation pour un collaborateur en situation de handicap relève de l'inclusion." },
       { id:'q19', theme:'RSE', question:"Quelle action relève de l'environnement ?", choices:["Réduire les impressions et passer à la signature électronique","Imprimer chaque document en double","Multiplier les déplacements","Jeter les anciens dossiers"], answer:0, explanation:"Réduire les impressions et dématérialiser (signature électronique) limite l'empreinte environnementale." },
       { id:'q20', theme:'Méthode', question:"Que vérifier en relecture le jour J ?", choices:["La couleur du stylo","Structure, actions, KPI, justification et tableaux","Le nombre de mots exact","La marge gauche uniquement"], answer:1, explanation:"En relecture on vérifie que chaque réponse a une structure, des actions, des KPI et une justification." },
+      { id:'q21', theme:'Prospection', question:"Quel canal privilégier pour toucher des vendeurs sur un quartier précis ?", choices:["L'emailing de masse national","Le terrain et la pige ciblés sur la zone","La publicité télévisée","Aucun canal"], answer:1, explanation:"Sur une zone précise, le terrain (porte-à-porte, pige) et l'ancrage local sont les plus efficaces." },
+      { id:'q22', theme:'Segmentation', question:"Sur quel critère segmenter une clientèle d'investisseurs ?", choices:["La couleur préférée","Le budget, la rentabilité visée et l'horizon de placement","Le prénom","La taille de l'agence"], answer:1, explanation:"On segmente l'investisseur selon son budget, sa rentabilité cible et son horizon de placement." },
+      { id:'q23', theme:'Services', question:"Quel service additionnel fidélise un vendeur après la transaction ?", choices:["Aucun suivi","Un accompagnement à la recherche de son futur bien","Une hausse de commission","La suppression du dossier"], answer:1, explanation:"Accompagner le vendeur dans son projet suivant prolonge la relation et fidélise." },
+      { id:'q24', theme:'CRM', question:"Que permet la qualification d'un prospect dans le CRM ?", choices:["Prioriser selon sa maturité et son potentiel","Changer la décoration de l'agence","Augmenter les loyers","Rien d'utile"], answer:0, explanation:"Qualifier un prospect (chaud / tiède / froid) permet de prioriser les actions commerciales." },
+      { id:'q25', theme:'RGPD', question:"Quel droit le client peut-il exercer sur ses données ?", choices:["Aucun droit","Accès, rectification et effacement","Le droit de fixer les prix","Le droit de gérer le CRM"], answer:1, explanation:"Le RGPD garantit notamment l'accès, la rectification et l'effacement des données personnelles." },
+      { id:'q26', theme:'Veille', question:"Quelle veille permet d'anticiper une évolution réglementaire (ex. DPE) ?", choices:["La veille juridique et réglementaire","La veille météo","Aucune veille","La veille des prix concurrents"], answer:0, explanation:"La veille juridique et réglementaire anticipe les évolutions comme le DPE." },
+      { id:'q27', theme:'Management', question:"Quel est l'intérêt d'un entretien individuel mensuel ?", choices:["Surveiller en continu","Faire le point sur les objectifs, écouter et accompagner","Réduire la paie","Éviter les clients"], answer:1, explanation:"Le point individuel mensuel permet de suivre les objectifs et d'accompagner le collaborateur." },
+      { id:'q28', theme:'Motivation', question:"Selon Herzberg, qu'est-ce qu'un facteur de motivation ?", choices:["Le salaire de base","La reconnaissance et les responsabilités","Les conditions de travail","La sécurité de l'emploi"], answer:1, explanation:"Pour Herzberg, reconnaissance, responsabilités et accomplissement sont des facteurs de motivation." },
+      { id:'q29', theme:'RSE', question:"Quelle action relève du pilier social de la RSE ?", choices:["Réduire les impressions papier","Favoriser la formation et le bien-être des salariés","Augmenter les prix","Supprimer la veille"], answer:1, explanation:"Le pilier social vise les conditions de travail, la formation et le bien-être des salariés." },
+      { id:'q30', theme:'Méthode', question:"Comment rendre une réponse convaincante à l'examen ?", choices:["En récitant le cours","En justifiant chaque action par un bénéfice concret","En écrivant le plus possible","En citant des marques"], answer:1, explanation:"Chaque action doit être justifiée par un bénéfice (performance, client, équipe, conformité)." },
+      { id:'q31', theme:'Prospection', question:"Qu'est-ce que la pige immobilière ?", choices:["Un outil comptable","Le repérage des biens vendus par des particuliers","Une taxe locale","Un logiciel RGPD"], answer:1, explanation:"La pige consiste à repérer les annonces de particuliers pour leur proposer un mandat." },
+      { id:'q32', theme:'Segmentation', question:"Pourquoi adapter le canal de communication au segment ?", choices:["Pour faire joli","Parce que chaque profil utilise des canaux différents","Pour réduire les ventes","Sans raison particulière"], answer:1, explanation:"Primo-accédants, investisseurs et seniors ne se touchent pas par les mêmes canaux." },
+      { id:'q33', theme:'Services', question:"Quel service rassure particulièrement un primo-accédant ?", choices:["Un accompagnement au financement et aux démarches","Une hausse de prix","L'absence de conseil","La gestion locative"], answer:0, explanation:"Le primo-accédant a besoin d'être accompagné sur le financement et les démarches." },
+      { id:'q34', theme:'CRM', question:"Quel indicateur le CRM aide-t-il à suivre ?", choices:["Le taux de transformation par canal","La couleur des bureaux","La météo","Le prix du café"], answer:0, explanation:"Le CRM consolide les indicateurs : taux de transformation, origine des leads, pipeline." },
+      { id:'q35', theme:'RGPD', question:"Avant d'envoyer une newsletter commerciale à un prospect, que faut-il ?", choices:["Son consentement","Rien de particulier","Augmenter le prix","Supprimer le CRM"], answer:0, explanation:"La prospection commerciale par email suppose le consentement (ou une relation client existante)." },
+      { id:'q36', theme:'Veille', question:"Quel est l'intérêt de la veille technologique pour une agence ?", choices:["Adopter les outils digitaux utiles (visite virtuelle, signature en ligne)","Changer de logo","Réduire l'équipe","Ignorer le digital"], answer:0, explanation:"La veille technologique aide à adopter les outils digitaux qui améliorent le service." },
+      { id:'q37', theme:'Management', question:"Comment fixer un objectif commercial efficace ?", choices:["Vague et sans échéance","Spécifique, mesurable, atteignable, réaliste et temporel (SMART)","Impossible à atteindre","Sans aucun indicateur"], answer:1, explanation:"Un objectif SMART est spécifique, mesurable, atteignable, réaliste et défini dans le temps." },
+      { id:'q38', theme:'Motivation', question:"Quel levier non financier motive une équipe commerciale ?", choices:["La reconnaissance, l'autonomie et les challenges","Uniquement la prime","La surveillance permanente","La réduction des congés"], answer:0, explanation:"Reconnaissance, autonomie, sens et challenges motivent au-delà de la rémunération." },
+      { id:'q39', theme:'RSE', question:"Quelle pratique réduit l'empreinte environnementale d'une agence ?", choices:["Multiplier les trajets en voiture","Optimiser les déplacements et dématérialiser les documents","Imprimer chaque dossier en double","Chauffer les locaux vides"], answer:1, explanation:"Optimiser les déplacements et dématérialiser limite l'empreinte environnementale." },
+      { id:'q40', theme:'Méthode', question:"Que faire des annexes d'un sujet d'étude de cas ?", choices:["Les ignorer","Les exploiter pour appuyer chaque réponse par des données","Les recopier intégralement","Les lire après avoir répondu"], answer:1, explanation:"Les annexes fournissent les données chiffrées qui crédibilisent et justifient les réponses." },
     ];
     this.FICHES = [
       { num:1, title:"Comprendre une étude de cas certifiante", summary:"L'étude de cas évalue votre capacité à analyser une situation réelle d'agence et à proposer des réponses structurées, opérationnelles et justifiées.", points:["Lire l'intégralité du sujet et des annexes avant de répondre","Repérer contexte, enjeux, contraintes et profils","Répondre en consultant : décider et justifier, pas réciter","S'appuyer sur les données du cas, pas des généralités"], example:"Face à une agence qui perd des mandats, on attend un plan d'action chiffré, pas une définition de la prospection." },
@@ -747,10 +771,13 @@ class Component extends DCLogic {
     ];
     this.EX_IDS = ['diagnostic','prospection','services','crm','mgmtrse'];
     this.state = this.loadState();
+    if (!Array.isArray(this.state.quizSet) || this.state.quizSet.length === 0) {
+      this.state.quizSet = this.QUIZ_BANK.slice(0, 20).map(q => q.id);
+    }
   }
 
   loadState() {
-    const def = { methodeRead:false, answers:{}, checked:{}, fichesOpen:{}, exercises:{}, examReveal:0, checklist:{} };
+    const def = { methodeRead:false, answers:{}, checked:{}, fichesOpen:{}, exercises:{}, examReveal:0, checklist:{}, quizSet:null };
     try {
       const raw = localStorage.getItem(this.KEY);
       if (raw) return Object.assign(def, JSON.parse(raw));
@@ -760,7 +787,7 @@ class Component extends DCLogic {
   save() {
     try {
       const s = this.state;
-      const payload = { methodeRead:s.methodeRead, answers:s.answers, checked:s.checked, exercises:s.exercises, examReveal:s.examReveal, checklist:s.checklist };
+      const payload = { methodeRead:s.methodeRead, answers:s.answers, checked:s.checked, exercises:s.exercises, examReveal:s.examReveal, checklist:s.checklist, quizSet:s.quizSet };
       localStorage.setItem(this.KEY, JSON.stringify(payload));
       if (window.MajubahSync) window.MajubahSync.push(payload);
     } catch(e) {}
@@ -776,20 +803,42 @@ class Component extends DCLogic {
     if (this.state.answers[qid] == null) return;
     this.patch(s => ({ checked: Object.assign({}, s.checked, { [qid]: true }) }));
   }
+  pickQuizIds() {
+    const ids = this.QUIZ_BANK.map(q => q.id);
+    for (let i = ids.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const t = ids[i]; ids[i] = ids[j]; ids[j] = t;
+    }
+    return ids.slice(0, Math.min(20, ids.length));
+  }
+  getActiveQuiz() {
+    const byId = {};
+    this.QUIZ_BANK.forEach(q => { byId[q.id] = q; });
+    const set = this.state.quizSet;
+    if (Array.isArray(set) && set.length) {
+      const list = set.map(id => byId[id]).filter(Boolean);
+      if (list.length) return list;
+    }
+    return this.QUIZ_BANK.slice(0, 20);
+  }
+  newQuiz() {
+    const answered = Object.keys(this.state.checked || {}).length;
+    if (answered && typeof confirm === 'function' && !confirm("Générer un nouveau quiz ? Vos réponses actuelles seront remplacées.")) return;
+    const ids = this.pickQuizIds();
+    this.patch(() => ({ quizSet: ids, answers: {}, checked: {} }));
+    try { const el = document.getElementById('quiz'); if (el) setTimeout(() => el.scrollIntoView({ behavior:'smooth', block:'start' }), 60); } catch (e) {}
+  }
   quizStats() {
+    const active = this.getActiveQuiz();
     let answered = 0, correct = 0;
-    const themeCorrect = {};
-    this.QUIZ.forEach(q => {
+    active.forEach(q => {
       if (this.state.checked[q.id]) {
         answered++;
-        const ok = this.state.answers[q.id] === q.answer;
-        if (ok) correct++;
-        themeCorrect[q.theme] = themeCorrect[q.theme] || { total:0, ok:0 };
+        if (this.state.answers[q.id] === q.answer) correct++;
       }
     });
-    // theme stats over all questions of a theme (need all correct)
     const byTheme = {};
-    this.QUIZ.forEach(q => {
+    active.forEach(q => {
       byTheme[q.theme] = byTheme[q.theme] || { total:0, ok:0 };
       byTheme[q.theme].total++;
       if (this.state.checked[q.id] && this.state.answers[q.id] === q.answer) byTheme[q.theme].ok++;
@@ -859,7 +908,7 @@ class Component extends DCLogic {
 
     // quiz VM
     const optBase = "display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:13px 16px;border-radius:10px;border:1.5px solid var(--border-subtle);background:var(--surface-card);font-family:var(--font-body);font-size:0.9375rem;color:var(--text-strong);transition:border-color .18s,background .18s;";
-    const quiz = this.QUIZ.map((q, qi) => {
+    const quiz = this.getActiveQuiz().map((q, qi) => {
       const sel = s.answers[q.id];
       const checked = !!s.checked[q.id];
       const choices = q.choices.map((label, ci) => {
@@ -942,6 +991,7 @@ class Component extends DCLogic {
       quiz,
       quizAnswered: stats.answered,
       quizCorrect: stats.correct,
+      newQuiz: () => this.newQuiz(),
       examRevealed, examHasMore, examBtnLabel, examProgressLabel,
       revealExam: () => this.revealExam(),
       checklist, checklistDone, checklistTotal: this.CHECKLIST.length,
@@ -998,10 +1048,12 @@ class Component extends DCLogic {
     c.id = 'mj-chip';
     c.setAttribute('style', 'position:fixed; bottom:14px; right:14px; z-index:9000; background:#fff; border:1px solid #d8dee1; border-radius:999px; padding:7px 14px; font-family:system-ui,sans-serif; font-size:13px; color:#243840; box-shadow:0 2px 10px rgba(0,0,0,.10); display:flex; gap:12px; align-items:center;');
     var span = document.createElement('span'); span.textContent = '👤 ' + prenom;
+    var home = document.createElement('a'); home.href = 'index.html'; home.textContent = 'Accueil';
+    home.setAttribute('style', 'color:#243840; font-weight:600; text-decoration:none;');
     var a = document.createElement('a'); a.href = '#'; a.textContent = 'Déconnexion';
     a.setAttribute('style', 'color:#e0533c; font-weight:600; text-decoration:none;');
     a.addEventListener('click', function (e) { e.preventDefault(); window.MajubahSync.logout(); });
-    c.appendChild(span); c.appendChild(a); document.body.appendChild(c);
+    c.appendChild(span); c.appendChild(home); c.appendChild(a); document.body.appendChild(c);
   }
 
   function showLogin(msg) {
@@ -1015,6 +1067,7 @@ class Component extends DCLogic {
       + '<p id="mj-msg" style="color:#e0533c; font-size:13px; min-height:18px; margin:8px 0 12px;">' + (msg || '') + '</p>'
       + '<button id="mj-go" style="width:100%; padding:13px; background:#e0533c; color:#fff; border:none; border-radius:999px; font-weight:700; font-size:15px; cursor:pointer;">Se connecter</button>'
       + '<p style="color:#9aa7ac; font-size:12px; margin-top:16px;">Codes fournis par ton formateur.</p>'
+      + '<a href="index.html" style="display:inline-block; margin-top:14px; color:#5b6a70; font-size:13px; text-decoration:underline;">← Retour à l\'accueil</a>'
       + '</div>'
     );
     var go = document.getElementById('mj-go');
